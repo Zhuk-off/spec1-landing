@@ -2,14 +2,15 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import localFont from 'next/font/local';
-// import fo from '@/shared/fonts/a_citynova_bold.ttf'
 
+/* Connect the fonts start*/
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const citynova = localFont({
   src: '../shared/fonts/a_citynova_bold.ttf',
   display: 'block',
   variable: '--font-citynova',
 });
+/* Connect the fonts end*/
 
 export const metadata: Metadata = {
   title: 'Create Next App',

@@ -15,6 +15,10 @@ const config: Config = {
         specText: ['var(--font-inter)'],
         specTitle: ['var(--font-citynova)'],
       },
+      colors: {
+        'spec-gold-light': '#F7E98C',
+        'spec-gold-light-hover': '#DDB04C',
+      },
     },
   },
   plugins: [],
