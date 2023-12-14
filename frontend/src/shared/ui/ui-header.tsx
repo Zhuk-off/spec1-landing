@@ -1,6 +1,6 @@
-import clsx from 'clsx';
-import { ReactNode } from 'react';
-
+import clsx from "clsx";
+import { ReactNode } from "react";
+import SvgMenu from "@/shared/ui/icons/svg-menu";
 
 export function UiHeader({
   className,
@@ -16,13 +16,16 @@ export function UiHeader({
   return (
     <header
       className={clsx(
-        'flex w-full justify-between py-3 px-6 pr-0 md:pr-6 ',
-        className
+        "flex w-full items-center justify-between px-2 py-4 sm:px-6 sm:py-6 ",
+        className,
       )}
     >
-      {logo}
-      {contacts}
-      {links}
+      <div className="hidden sm:block">{contacts}</div>
+      <div className="flex-shrink-0">{logo}</div>
+      <div className="hidden sm:block">{links}</div>
+      <div className="block animate-pulse text-spec-gold-light sm:hidden">
+        <SvgMenu />
+      </div>
     </header>
   );
 }
