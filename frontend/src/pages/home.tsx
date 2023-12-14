@@ -1,3 +1,4 @@
+"use client";
 import { UiLogo } from "@/shared/ui/ui-logo";
 import logoImg from "/public/logo.svg";
 import { UiPhone } from "@/shared/ui/ui-phone";
@@ -7,8 +8,13 @@ import SvgTelegram from "@/shared/ui/icons/svg-telegram";
 import SvgViber from "@/shared/ui/icons/svg-viber";
 import { UiHeader } from "@/shared/ui/ui-header";
 import UiContainer from "@/shared/ui/layouts/ui-container";
+import { UiMenu } from "@/shared/ui/ui-menu";
+import { useState } from "react";
+import clsx from "clsx";
 
-export async function HomePage() {
+export function HomePage() {
+  const [openMenu, setOpenMenu] = useState(false);
+
   const contact = (
     <div>
       <UiPhone phone={"+375 (29) 516-44-44"} phoneLink="+375295116444" />
@@ -16,7 +22,7 @@ export async function HomePage() {
     </div>
   );
   const links = (
-    <div className="flex gap-5">
+    <div className="flex w-[150px] flex-row-reverse gap-5 md:w-[202px]">
       <UiSocialIcon
         icon={<SvgTelegram />}
         href="https://t.me/+375445959498"
@@ -34,18 +40,27 @@ export async function HomePage() {
 
   return (
     <main
-      className="min-h-full bg-scroll"
+      className={clsx(
+        "relative min-h-full bg-scroll",
+        openMenu && "h-screen overflow-hidden",
+      )}
       style={{ backgroundImage: "url('background.webp')" }}
     >
       <UiContainer>
         <UiHeader
+          openMenu={openMenu}
+          setOpenMenu={setOpenMenu}
           contacts={contact}
           logo={<UiLogo logoUrl={logoImg} />}
           links={links}
         />
       </UiContainer>
-
-      <div className="flex flex-col"></div>
+      <div className="sticky top-0 bg-black/70 ">
+        <UiContainer>
+          <UiMenu openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        </UiContainer>
+      </div>
+      <div className="h-[2000px] w-full bg-yellow-200"></div>
     </main>
   );
 }

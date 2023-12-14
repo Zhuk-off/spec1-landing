@@ -1,6 +1,6 @@
-import clsx from 'clsx';
-import Link from 'next/link';
-import { ReactNode } from 'react';
+import clsx from "clsx";
+import Link from "next/link";
+import { ReactNode } from "react";
 
 type ISocialIcon = {
   href: string;
@@ -17,9 +17,9 @@ export const UiSocialIcon = ({
 }: ISocialIcon) => {
   return (
     <Link
-      className={clsx('', className)}
+      className={clsx("", className)}
       href={href}
-      target={'_blank'}
+      target={"_blank"}
       aria-label={ariaLabel}
     >
       {icon}

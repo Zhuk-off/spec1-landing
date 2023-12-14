@@ -1,5 +1,5 @@
-import clsx from 'clsx';
-import { ReactNode } from 'react';
+import clsx from "clsx";
+import { ReactNode } from "react";
 
 export default function UiContainer({
   children,
@@ -9,12 +9,7 @@ export default function UiContainer({
   className?: string;
 }) {
   return (
-    <div
-      className={clsx(
-        ' relative mx-auto px-2 max-w-[1440px]',
-        className
-      )}
-    >
+    <div className={clsx("mx-auto max-w-[1440px] px-2", className)}>
       {children}
     </div>
   );

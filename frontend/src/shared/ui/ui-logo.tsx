@@ -1,18 +1,23 @@
-import Link from 'next/link';
-import { ButtonHTMLAttributes } from 'react';
-import clsx from 'clsx';
-
-import Image from 'next/image';
-import { ROUTER_PATHS } from '../lib/constants/routes';
+import Link from "next/link";
+import clsx from "clsx";
+import Image from "next/image";
+import { ROUTER_PATHS } from "../lib/constants/routes";
 
 type ILogo = {
   logoUrl: string;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+  className?: string;
+};
 
 export const UiLogo = ({ logoUrl, className }: ILogo) => {
   return (
-    <Link href={ROUTER_PATHS.HOME_PAGE} className={clsx(className, 'hover:scale-105')}>
-      <Image src={logoUrl} alt="logo" width={180} height={70} className='md:hover:scale-[101%] transition-transform' />
+    <Link href={ROUTER_PATHS.HOME_PAGE} className={clsx(className, "")}>
+      <Image
+        src={logoUrl}
+        alt="logo"
+        width={180}
+        height={70}
+        className="transition-transform md:hover:scale-[101%]"
+      />
     </Link>
   );
 };
