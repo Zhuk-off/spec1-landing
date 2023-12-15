@@ -11,10 +11,12 @@ import UiContainer from "@/shared/ui/layouts/ui-container";
 import { UiMenu } from "@/shared/ui/ui-menu";
 import { useState } from "react";
 import clsx from "clsx";
+import Image from "next/image";
+import bg from "/public/bg-promo.webp";
 
 export function HomePage() {
   const [openMenu, setOpenMenu] = useState(false);
-console.log(openMenu)
+  console.log(openMenu);
   const contact = (
     <div>
       <UiPhone phone={"+375 (29) 516-44-44"} phoneLink="+375295116444" />
@@ -60,7 +62,12 @@ console.log(openMenu)
           <UiMenu openMenu={openMenu} setOpenMenu={setOpenMenu} />
         </UiContainer>
       </div>
-      <div className="h-[2000px] w-full bg-yellow-200"></div>
+      <div className="h-[2000px] w-full">
+        <div className="pt-10 bg-black">
+          <Image alt="Spec 1" src={bg} priority className=""/>
+        </div>
+      </div>
+
     </main>
   );
 }
