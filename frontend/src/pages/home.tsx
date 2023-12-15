@@ -14,7 +14,7 @@ import clsx from "clsx";
 
 export function HomePage() {
   const [openMenu, setOpenMenu] = useState(false);
-
+console.log(openMenu)
   const contact = (
     <div>
       <UiPhone phone={"+375 (29) 516-44-44"} phoneLink="+375295116444" />

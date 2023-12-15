@@ -36,12 +36,13 @@ const menuMock = [
 ];
 
 export const UiMenu = ({ openMenu, setOpenMenu, className }: ILogo) => {
+  console.log(openMenu);
   return (
     <nav
       className={clsx(
         className,
-        "fixed left-[100%] top-0 h-full w-full overflow-auto bg-black px-2 py-20 transition-all ease-linear sm:static sm:h-auto sm:w-auto sm:bg-opacity-0 sm:py-5",
-        openMenu && "left-[0%]",
+        "fixed top-0 h-full w-full overflow-auto bg-black px-2 py-20 transition-all ease-linear sm:static sm:h-auto sm:w-auto sm:bg-opacity-0 sm:py-5",
+        openMenu ? "left-[0%]" : "left-[100%]",
       )}
     >
       <ul
