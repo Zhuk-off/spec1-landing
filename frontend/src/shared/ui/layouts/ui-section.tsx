@@ -9,7 +9,12 @@ export default function UiSection({
   className?: string;
 }) {
   return (
-    <div className={clsx("py-14 px-3 sm:px-6 sm:py-20 md:px-14 md:py-20 lg:py-24", className)}>
+    <div
+      className={clsx(
+        "px-3 py-10 sm:px-6 sm:py-20 md:px-10 md:py-20 lg:py-24",
+        className,
+      )}
+    >
       {children}
     </div>
   );

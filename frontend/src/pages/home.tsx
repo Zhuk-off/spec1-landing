@@ -29,6 +29,7 @@ import oleomacSVG from "/public/slider/oleomac.svg";
 import ryobiSVG from "/public/slider/ryobi.svg";
 import wiloSVG from "/public/slider/wilo.svg";
 import shop from "/public/shop1.jpg";
+import card1 from "/public/cards/card1.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -40,6 +41,7 @@ import "swiper/css/autoplay";
 import { UiTitle } from "@/shared/ui/ui-title";
 import UiSection from "@/shared/ui/layouts/ui-section";
 import { UiShopCat } from "@/shared/ui/ui-shop-cat";
+import { UiCard } from "@/shared/ui/ui-card";
 
 export function HomePage() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -91,7 +93,7 @@ export function HomePage() {
       </div>
 
       {/* Central image and filters start  */}
-      <div className="w-full">
+      {/* <div className="w-full">
         <div className=" relative bg-black pr-5 pt-5 sm:pt-10">
           <Image
             alt="Spec 1"
@@ -104,7 +106,7 @@ export function HomePage() {
           <div className="relative -mt-10 h-10 bg-gradient-to-t from-black to-transparent md:-mt-20 md:h-20"></div>
         </div>
       </div>
-      <div className="from-spec-black-light h-8 bg-gradient-to-t to-black md:h-20"></div>
+      <div className="from-spec-black-light h-8 bg-gradient-to-t to-black md:h-20"></div> */}
       {/* Central image and filters end  */}
 
       {/* Block About Us start */}
@@ -267,7 +269,9 @@ export function HomePage() {
         </UiContainer>
       </UiSection>
       {/* Block About Us end */}
-      <UiSection>
+
+      {/* Block Storefront start */}
+      {/* <UiSection>
         <UiContainer>
           <UiTitle title="Магазин" />
           <div className="sm:py-5 md:py-10 xl:px-32 xl:py-32 2xl:px-44">
@@ -305,7 +309,58 @@ export function HomePage() {
             </div>
           </div>
         </UiContainer>
+      </UiSection> */}
+      {/* Block Storefront end */}
+
+      {/* Block Installment start */}
+      <UiSection className="bg-spec-black-light">
+        <UiContainer>
+          <UiTitle title="Рассрочка" />
+          <div className="text-spec-text-white flex flex-col gap-5 md:flex-row md:gap-8 lg:gap-14">
+            <div className="">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+              reprehenderit eveniet alias quasi! Exercitationem, blanditiis?
+              Temporibus a perspiciatis quasi at non voluptas assumenda atque
+              distinctio eum, omnis repellat inventore voluptate voluptatum
+              ducimus beatae, obcaecati consequuntur esse minima necessitatibus
+              cum accusantium libero ipsum numquam? Ut, vero enim minus eaque{" "}
+            </div>
+            <div className="">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi,
+              eligendi pariatur saepe laboriosam provident consectetur, suscipit
+              cum voluptatem nesciunt consequatur quia et maiores laborum
+              placeat? Alias laborum officiis rerum, temporibus facilis dolore
+              saepe magni excepturi, nam quae nisi distinctio aspernatur odit
+              iste dolores tempore rem at quos voluptate! Quia, perspiciatis.
+            </div>
+          </div>
+          <div className="mt-10 flex flex-col gap-12 sm:mt-20 lg:px-6">
+            <UiCard
+              title={"Халва - 2 мес "}
+              image={shop}
+              desc={
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, distinctio sint, reprehenderit similique reiciendis atque dicta aliquid dolore harum necessitatibus tenetur repellendus mollitia? Nam veritatis explicabo pariatur atque veniam ad illo repudiandae provident deleniti ex, laudantium quis architecto doloremque inventore velit incidunt, accusantium non ipsam nemo delectus magnam. Animi!"
+              }
+            />
+
+            <UiCard
+              title={"Халва - 2 мес "}
+              image={card1}
+              desc={
+                "Мы приглашаем вас узнать больше о нашей компании на этой странице. Здесь вы можете прочитать о нашей истории, узнать о наших ценностях, и о том, как мы стремимся обеспечить нашим клиентам предложений."
+              }
+            />
+            <UiCard
+              title={"Халва - 2 мес "}
+              image={card1}
+              desc={
+                "Мы приглашаем вас узнать больше о нашей компании на этой странице. Здесь вы можете прочитать о нашей истории, узнать о наших ценностях, и о том, как мы стремимся обеспечить нашим клиентам предложений."
+              }
+            />
+          </div>
+        </UiContainer>
       </UiSection>
+      {/* Block Installment end */}
     </main>
   );
 }
