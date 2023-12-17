@@ -18,6 +18,7 @@ const config: Config = {
         "spec-gold-light-hover": "#DDB04C",
         "spec-black-light": "#1E1E1E",
         "spec-text-white": "rgba(255,255,255,0.75)",
+        "spec-bg-black": "black",
       },
       keyframes: {
         "scale-in-top": {
@@ -34,8 +35,7 @@ const config: Config = {
         },
       },
       animation: {
-        "scale-in-top":
-          "scale-in-top 20s linear both",
+        "scale-in-top": "scale-in-top 20s linear both",
       },
     },
   },
