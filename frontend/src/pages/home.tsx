@@ -28,7 +28,7 @@ import milwaukeeSVG from "/public/slider/milwaukee.svg";
 import oleomacSVG from "/public/slider/oleomac.svg";
 import ryobiSVG from "/public/slider/ryobi.svg";
 import wiloSVG from "/public/slider/wilo.svg";
-import shop from "/public/slider/shop.jpg";
+import shop from "/public/shop1.jpg";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -31,7 +31,7 @@ export const UiShopCat = ({
         height={514}
         alt="Storefront"
         className={clsx(
-          `w-full object-cover sm:w-[382px] sm:flex-[1_2_0%] xl:absolute xl:-top-[80px]`,
+          `w-full object-cover sm:h-[514px] sm:w-[382px] sm:flex-[1_2_0%] xl:absolute xl:-top-[80px]`,
           xPosition,
         )}
       />
