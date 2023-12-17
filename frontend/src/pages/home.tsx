@@ -28,6 +28,7 @@ import milwaukeeSVG from "/public/slider/milwaukee.svg";
 import oleomacSVG from "/public/slider/oleomac.svg";
 import ryobiSVG from "/public/slider/ryobi.svg";
 import wiloSVG from "/public/slider/wilo.svg";
+import shop from "/public/slider/shop.jpg";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -36,6 +37,9 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
+import { UiTitle } from "@/shared/ui/ui-title";
+import UiSection from "@/shared/ui/layouts/ui-section";
+import { UiShopCat } from "@/shared/ui/ui-shop-cat";
 
 export function HomePage() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -104,13 +108,12 @@ export function HomePage() {
       {/* Central image and filters end  */}
 
       {/* Block About Us start */}
-      <div className="bg-spec-black-light relative py-5 sm:px-6 sm:py-20 md:px-14 md:py-20 lg:py-24">
+      <UiSection className="bg-spec-black-light relative">
         <UiContainer>
-          <div className="relative mt-2 flex min-h-[300px] px-3 md:px-0 lg:mt-10">
+          <div className="relative mt-2 flex min-h-[300px] md:px-0 lg:mt-10">
             <div className="relative z-10 flex w-full flex-col md:w-1/2 ">
-              <h2 className="mb-5 mt-3 font-specTitle text-2xl font-bold uppercase text-spec-gold-light md:my-7 md:text-5xl">
-                О команде
-              </h2>
+              <UiTitle title="О команде" />
+
               <div className="text-spec-text-white">
                 <p className="">
                   Мы приглашаем вас узнать больше о нашей компании на этой
@@ -149,12 +152,10 @@ export function HomePage() {
               />
             </div>
           </div>
-          <div className="px-3 pt-5 md:px-0 md:pt-12">
+          <div className="pt-5 md:px-0 md:pt-12">
             <div className="flex flex-col items-center gap-0 md:flex-row-reverse md:gap-5">
               <div className="flex-1 shadow-2xl md:px-7 md:py-14">
-                <h2 className="mb-5 mt-3 font-specTitle text-2xl font-bold uppercase text-spec-gold-light md:my-7 md:text-5xl">
-                  О компании
-                </h2>
+                <UiTitle title="О компании" />
                 <div className="text-spec-text-white">
                   <p className="">
                     Мы приглашаем вас узнать больше о нашей компании на этой
@@ -264,8 +265,47 @@ export function HomePage() {
             </Swiper>
           </div>
         </UiContainer>
-      </div>
+      </UiSection>
       {/* Block About Us end */}
+      <UiSection>
+        <UiContainer>
+          <UiTitle title="Магазин" />
+          <div className="sm:py-5 md:py-10 xl:px-32 xl:py-32 2xl:px-44">
+            <div className="sm:bg-spec-black-light sm:px-5 xl:px-60 ">
+              <UiShopCat
+                image={shop}
+                title="Болгарки"
+                desc=" Мы приглашаем вас узнать больше о нашей компании на этой"
+                position="left"
+              />
+              <UiShopCat
+                image={shop}
+                title="Болгарки"
+                desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem iure molestiae laboriosam placeat cumque quisquam nostrum ducimus nam maxime dolore impedit, tempora quod libero iste suscipit id vero voluptas sed in sunt illo ipsa rerum expedita. Blanditiis iure repellendus deserunt accusantium enim officia quo, tempora aperiam autem voluptatibus molestias, labore unde accusamus voluptatem earum nulla. Dolor consequuntur obcaecati hic? Aspernatur ab impedit placeat, incidunt a qui reiciendis facere obcaecati, quidem itaque odit voluptates rem aperiam sit perspiciatis. Nobis blanditiis sit suscipit exercitationem odio! Praesentium nostrum, consequatur voluptatum repudiandae impedit unde officia autem fugit odio atque harum quaerat minima delectus adipisci!"
+                position="right"
+              />
+              <UiShopCat
+                image={shop}
+                title="Болгарки"
+                desc="Lorem ipsum !"
+                position="left"
+              />
+              <UiShopCat
+                image={shop}
+                title="Болгарки"
+                desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem iure molestiae laboriosam placeat cumque quisquam nostrum ducimus nam maxime dolore impedit, tempora quod libero iste suscipit id vero voluptas sed in sunt illo ipsa rerum expedita. Blanditiis iure repellendus deserunt accusantium enim officia quo, tempora aperiam autem voluptatibus molestias, labore unde accusamus voluptatem earum nulla. Dolor consequuntur obcaecati hic? Aspernatur ab impedit placeat, incidunt a qui reiciendis facere obcaecati, quidem itaque odit voluptates rem aperiam sit perspiciatis. Nobis blanditiis sit suscipit exercitationem odio! Praesentium nostrum, consequatur voluptatum repudiandae impedit unde officia autem fugit odio atque harum quaerat minima delectus adipisci!"
+                position="right"
+              />
+              <UiShopCat
+                image={shop}
+                title="{Болгарки}"
+                desc=" Мы приглашаем вас узнать больше о нашей компании на этой"
+                position="left"
+              />
+            </div>
+          </div>
+        </UiContainer>
+      </UiSection>
     </main>
   );
 }
