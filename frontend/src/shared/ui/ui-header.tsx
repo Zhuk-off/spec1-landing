@@ -25,9 +25,9 @@ export function UiHeader({
       )}
     >
       <div className="hidden sm:block">{contacts}</div>
-      <div className="relative z-10 flex-shrink-0">{logo}</div>
+      <div className="relative z-40 flex-shrink-0">{logo}</div>
       <div className="hidden sm:block">{links}</div>
-      <div className="relative z-10 block animate-pulse text-spec-gold-light sm:hidden">
+      <div className="relative z-40 block animate-pulse text-spec-gold-light sm:hidden">
         <UiButtonMenu openMenu={openMenu} setOpenMenu={setOpenMenu} />
       </div>
     </header>
