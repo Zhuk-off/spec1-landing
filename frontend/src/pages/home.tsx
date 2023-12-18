@@ -35,7 +35,7 @@ import shipping2Img from "/public/shipping2.jpg";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -49,7 +49,7 @@ import { UiMenuItem } from "@/shared/ui/ui-menu-item";
 const menuMock = [
   {
     text: "Главная",
-    link: "/",
+    link: "#main",
   },
   {
     text: "О нас",
@@ -61,7 +61,7 @@ const menuMock = [
   },
   {
     text: "Рассрочка",
-    link: "#",
+    link: "#installment",
   },
   {
     text: "Доставка",
@@ -75,7 +75,7 @@ const menuMock = [
 
 export function HomePage() {
   const [openMenu, setOpenMenu] = useState(false);
-  console.log(openMenu);
+
   const contact = (
     <div>
       <UiPhone phone={"+375 (29) 516-44-44"} phoneLink="+375295116444" />
@@ -101,50 +101,54 @@ export function HomePage() {
 
   return (
     <main
+      id="main"
       className={clsx(
         "relative min-h-full bg-scroll",
         openMenu && "h-screen overflow-hidden",
       )}
       style={{ backgroundImage: "url('background.webp')" }}
     >
-      <UiContainer>
-        <UiHeader
-          openMenu={openMenu}
-          setOpenMenu={setOpenMenu}
-          contacts={contact}
-          logo={<UiLogo logoUrl={logoImg} />}
-          links={links}
-        />
-      </UiContainer>
-      <div className="sticky top-0 z-30 bg-black/70">
-        <UiContainer>
-          <UiMenu
-            menuData={menuMock}
-            openMenu={openMenu}
-            setOpenMenu={setOpenMenu}
-          />
-        </UiContainer>
-      </div>
-
-      {/* Central image and filters start  */}
-      {/* <div className="w-full">
-        <div className=" relative bg-black pr-5 pt-5 sm:pt-10">
-          <Image
-            alt="Spec 1"
-            src={bg}
-            priority
-            className="animate-scale-in-top"
-          />
-
-          <div className="relative -mt-10 h-10 bg-gradient-to-t from-black to-transparent md:h-10"></div>
-          <div className="relative -mt-10 h-10 bg-gradient-to-t from-black to-transparent md:-mt-20 md:h-20"></div>
+      <div className="flex min-h-screen flex-col">
+        <div className="bg-spec-bg-black">
+          <UiContainer>
+            <UiHeader
+              openMenu={openMenu}
+              setOpenMenu={setOpenMenu}
+              contacts={contact}
+              logo={<UiLogo logoUrl={logoImg} />}
+              links={links}
+            />
+          </UiContainer>
         </div>
+        <div className="sticky top-0 z-30 bg-black/70">
+          <UiContainer>
+            <UiMenu
+              menuData={menuMock}
+              openMenu={openMenu}
+              setOpenMenu={setOpenMenu}
+            />
+          </UiContainer>
+        </div>
+        {/* Central image and filters start  */}
+        <div className="flex grow flex-col justify-center">
+          <div className="relative flex grow flex-col justify-center bg-black pr-5 pt-20 sm:pt-10">
+            <Image
+              alt="Spec 1"
+              src={bg}
+              priority
+              className="animate-scale-in-top"
+            />
+            <div className="relative -mt-10 h-10 bg-gradient-to-t from-black to-transparent md:h-10"></div>
+            <div className="relative -mt-10 h-10 bg-gradient-to-t from-black to-transparent md:-mt-20 md:h-20"></div>
+          </div>
+          <div className="h-32 bg-black md:h-20"></div>
+        </div>
+        {/* <div className="from-spec-black-light h-8 bg-gradient-to-t to-black md:h-20"></div> */}
+        {/* Central image and filters end  */}
       </div>
-      <div className="from-spec-black-light h-8 bg-gradient-to-t to-black md:h-20"></div> */}
-      {/* Central image and filters end  */}
 
       {/* Block About Us start */}
-      <UiSection className="bg-spec-black-light relative">
+      <UiSection className="bg-spec-black-light relative" id="about">
         <UiContainer>
           <div className="relative mt-2 flex min-h-[300px] md:px-0 lg:mt-10">
             <div className="relative z-10 flex w-full flex-col md:w-1/2 ">
@@ -305,7 +309,7 @@ export function HomePage() {
       {/* Block About Us end */}
 
       {/* Block Storefront start */}
-      {/* <UiSection>
+      <UiSection id="shop">
         <UiContainer>
           <UiTitle title="Магазин" />
           <div className="sm:py-5 md:py-10 xl:px-32 xl:py-32 2xl:px-44">
@@ -343,11 +347,11 @@ export function HomePage() {
             </div>
           </div>
         </UiContainer>
-      </UiSection> */}
+      </UiSection>
       {/* Block Storefront end */}
 
       {/* Block Installment start */}
-      {/* <UiSection className="bg-spec-black-light">
+      <UiSection className="bg-spec-black-light" id="installment">
         <UiContainer>
           <UiTitle title="Рассрочка" />
           <div className="text-spec-text-white flex flex-col gap-5 md:flex-row md:gap-8 lg:gap-14">
@@ -393,24 +397,19 @@ export function HomePage() {
             />
           </div>
         </UiContainer>
-      </UiSection> */}
+      </UiSection>
       {/* Block Installment end */}
 
       {/* Block Installment start */}
-      <UiSection className="bg-spec-bg-black">
+      <UiSection className="bg-spec-bg-black" id="ship">
         <UiContainer>
           <div className="relative flex lg:static lg:flex-row-reverse">
             <div className="relative z-10 max-w-2xl overflow-y-auto sm:px-5 lg:w-[500px] lg:px-0 lg:pt-20">
               <UiTitle title="Доставка" className="text-white" />
               <div className="text-spec-text-white lg:max-h-12 lg:pl-28">
                 Мы приглашаем вас узнать больше о нашей компании на этой
-                странице. Здесь вы можете прочитать о нашей испрочитать
-                обеспечить нашим клиене о нашей компании на этой странице. Здесь
-                вы можете прочитать о нашей испрочитать обеспечить нашим клиене
-                о нашей компании на этой странице. Здесь вы можете прочитать о
-                нашей испрочитать обеспечить нашим клиене о нашей компании на
-                этой странице. Здесь вы можете прочитать о нашей испрочитать
-                обеспечить нашим клиен
+                странице. Здесь вы можете про Здесь вы можете про Здесь вы
+                можете про Здесь вы можете про
               </div>
             </div>
             <div className="inline-block lg:relative lg:grow">
@@ -472,7 +471,7 @@ export function HomePage() {
       {/* Block Installment end */}
 
       {/* Block Contacts start */}
-      <UiSection className="bg-spec-black-light relative">
+      <UiSection className="bg-spec-black-light relative" id="contact">
         <UiContainer>
           <div className="flex flex-col gap-5 md:flex-row md:gap-6 lg:gap-12">
             <div className="flex-1">
