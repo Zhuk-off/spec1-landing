@@ -15,8 +15,8 @@ export const UiMenuItem = ({ href, text, setOpenMenu, className }: ILogo) => {
       href={href}
       onClick={() => setOpenMenu(false)}
       className={clsx(
-        className,
         "font-specTitle text-3xl uppercase tracking-widest text-spec-gold-light transition-colors sm:text-lg sm:tracking-wider md:hover:text-spec-gold-light-hover lg:text-xl",
+        className,
       )}
     >
       {text}
