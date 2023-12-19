@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_logo_main_images",
+  "info": {
+    "displayName": "Main-image"
+  },
+  "options": {},
+  "attributes": {
+    "imagemain": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

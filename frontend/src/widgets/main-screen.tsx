@@ -1,4 +1,4 @@
-import { ResponseBackend } from "@/shared/lib/types";
+import { Header, Item } from "@/shared/lib/types";
 import SvgTelegram from "@/shared/ui/icons/svg-telegram";
 import SvgViber from "@/shared/ui/icons/svg-viber";
 import UiContainer from "@/shared/ui/layouts/ui-container";
@@ -9,47 +9,28 @@ import { UiMenu } from "@/shared/ui/ui-menu";
 import { UiPhone } from "@/shared/ui/ui-phone";
 import { UiSocialIcon } from "@/shared/ui/ui-social-icon";
 import Image from "next/image";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import bg from "/public/bg-promo.webp";
 import clsx from "clsx";
 
-const menuMock = [
-  {
-    text: "Главная",
-    link: "#main",
-  },
-  {
-    text: "О нас",
-    link: "#about",
-  },
-  {
-    text: "Магазин",
-    link: "#shop",
-  },
-  {
-    text: "Рассрочка",
-    link: "#installment",
-  },
-  {
-    text: "Доставка",
-    link: "#ship",
-  },
-  {
-    text: "Контакты",
-    link: "#contact",
-  },
-];
-
 export function MainScreen({
-  data,
+  header,
+  menu,
+  mainImage,
   openMenu,
   setOpenMenu,
 }: {
-  data: ResponseBackend;
+  header: Header;
+  menu: Item[];
+  mainImage: {
+    url: string;
+    alt: string | null;
+    width: number;
+    height: number;
+  };
   openMenu: boolean;
   setOpenMenu: Dispatch<SetStateAction<boolean>>;
 }) {
-  const header = data.data.attributes.Header;
   const logoUrl =
     process.env.NEXT_PUBLIC_STRAPI_API_URL +
     header.logo.image.data.attributes.url;
@@ -99,7 +80,7 @@ export function MainScreen({
       <div className="sticky top-0 z-30 bg-black/70">
         <UiContainer>
           <UiMenu
-            menuData={menuMock}
+            menuData={menu}
             openMenu={openMenu}
             setOpenMenu={setOpenMenu}
           />
@@ -110,8 +91,10 @@ export function MainScreen({
       <div className="flex grow flex-col justify-center">
         <div className="relative flex grow flex-col justify-center bg-black pr-5 pt-20 sm:pt-10">
           <Image
-            alt="Spec 1"
-            src={bg}
+            alt={mainImage?.alt ? mainImage.alt : ""}
+            src={mainImage.url}
+            width={mainImage.width}
+            height={mainImage.height}
             priority
             className="animate-scale-in-top"
           />

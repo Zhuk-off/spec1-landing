@@ -1,14 +1,12 @@
 import clsx from "clsx";
 import { UiMenuItem } from "./ui-menu-item";
 import { Dispatch, SetStateAction } from "react";
+import { Item } from "../lib/types";
 
 type IMenu = {
   openMenu: boolean;
   setOpenMenu: Dispatch<SetStateAction<boolean>>;
-  menuData: {
-    text: string;
-    link: string;
-  }[];
+  menuData: Item[]
   className?: string;
 };
 
@@ -36,7 +34,7 @@ export const UiMenu = ({
           <li key={index} className="mx-2 ">
             <UiMenuItem
               href={item.link}
-              text={item.text}
+              text={item.name}
               setOpenMenu={setOpenMenu}
             />
           </li>

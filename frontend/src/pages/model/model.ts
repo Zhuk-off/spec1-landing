@@ -1,4 +1,4 @@
-import { ResponseBackend } from "@/shared/lib/types";
+import { Welcome } from "@/shared/lib/types";
 import qs from "qs";
 
 export async function getPageBySlug(slug: string) {
@@ -13,6 +13,11 @@ export async function getPageBySlug(slug: string) {
       "Header.logo",
       "Header.logo.image",
       "Header.social",
+      "Menu",
+      "Menu.item",
+      "imagemain.imagemain",
+
+      
     ],
   };
   const options = { headers: { Authorization: `Bearer ${token}` } };
@@ -48,7 +53,7 @@ export async function fetchAPI(
 
     // Trigger API call
     const response = await fetch(requestUrl, mergedOptions);
-    const data: ResponseBackend = await response.json();
+    const data: Welcome = await response.json();
 
     return data;
   } catch (error) {

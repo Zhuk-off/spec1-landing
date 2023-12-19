@@ -2,7 +2,7 @@
 import logoImg from "/public/logo.svg";
 import { SetStateAction, useState } from "react";
 import clsx from "clsx";
-import { ResponseBackend } from "@/shared/lib/types";
+import { Welcome } from "@/shared/lib/types";
 import { MainScreen } from "@/widgets/main-screen";
 import { AboutScreen } from "@/widgets/about-screen";
 import { StorefrontScreen } from "@/widgets/storefront-screen";
@@ -38,8 +38,21 @@ const menuMock = [
   },
 ];
 
-export function HomePageView({ data }: { data: ResponseBackend }) {
+export function HomePageView({ data }: { data: Welcome }) {
   const [openMenu, setOpenMenu] = useState(false);
+  const dataRes = data.data.attributes;
+  const header = dataRes.Header;
+  const menu = dataRes.Menu.item;
+  const mainImage = {
+    url:
+      process.env.NEXT_PUBLIC_STRAPI_API_URL +
+      dataRes.imagemain.imagemain.data.attributes.url,
+    alt: dataRes.imagemain.imagemain.data.attributes.alternativeText,
+    width: dataRes.imagemain.imagemain.data.attributes.width,
+    height: dataRes.imagemain.imagemain.data.attributes.height,
+  };
+
+  
 
   return (
     <main
@@ -50,7 +63,13 @@ export function HomePageView({ data }: { data: ResponseBackend }) {
       )}
       style={{ backgroundImage: "url('background.webp')" }}
     >
-      <MainScreen data={data} openMenu={openMenu} setOpenMenu={setOpenMenu} />
+      <MainScreen
+        header={header}
+        menu={menu}
+        openMenu={openMenu}
+        setOpenMenu={setOpenMenu}
+        mainImage={mainImage}
+      />
 
       <AboutScreen />
 

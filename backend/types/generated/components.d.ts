@@ -57,6 +57,16 @@ export interface LogoLogo extends Schema.Component {
   };
 }
 
+export interface LogoMainImage extends Schema.Component {
+  collectionName: 'components_logo_main_images';
+  info: {
+    displayName: 'Main-image';
+  };
+  attributes: {
+    imagemain: Attribute.Media & Attribute.Required;
+  };
+}
+
 export interface MenuMenuItem extends Schema.Component {
   collectionName: 'components_menu_menu_items';
   info: {
@@ -111,6 +121,7 @@ declare module '@strapi/types' {
       'contact.phone': ContactPhone;
       'contact.social': ContactSocial;
       'logo.logo': LogoLogo;
+      'logo.main-image': LogoMainImage;
       'menu.menu-item': MenuMenuItem;
       'menu.menu': MenuMenu;
       'widgets.header': WidgetsHeader;

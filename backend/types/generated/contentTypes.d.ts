@@ -727,6 +727,7 @@ export interface ApiMainMain extends Schema.SingleType {
     Header: Attribute.Component<'widgets.header'> & Attribute.Required;
     Menu: Attribute.Component<'menu.menu'> & Attribute.Required;
     name: Attribute.String;
+    imagemain: Attribute.Component<'logo.main-image'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -26,6 +26,12 @@
     },
     "name": {
       "type": "string"
+    },
+    "imagemain": {
+      "type": "component",
+      "repeatable": false,
+      "component": "logo.main-image",
+      "required": true
     }
   }
 }

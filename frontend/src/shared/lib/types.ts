@@ -1,4 +1,4 @@
-export interface ResponseBackend {
+export interface Welcome {
     data: WelcomeData;
     meta: Meta;
 }
@@ -14,6 +14,8 @@ export interface PurpleAttributes {
     publishedAt: Date;
     name:        string;
     Header:      Header;
+    Menu:        Menu;
+    imagemain:   Imagemain;
 }
 
 export interface Header {
@@ -39,21 +41,21 @@ export interface Logo {
 }
 
 export interface Image {
-    data: ImageData;
+    data: ImagemainData;
 }
 
-export interface ImageData {
+export interface ImagemainData {
     id:         number;
     attributes: FluffyAttributes;
 }
 
 export interface FluffyAttributes {
     name:              string;
-    alternativeText:   string;
+    alternativeText:   null | string;
     caption:           null;
     width:             number;
     height:            number;
-    formats:           null;
+    formats:           Formats | null;
     hash:              string;
     ext:               string;
     mime:              string;
@@ -66,6 +68,25 @@ export interface FluffyAttributes {
     updatedAt:         Date;
 }
 
+export interface Formats {
+    thumbnail: Large;
+    large:     Large;
+    medium:    Large;
+    small:     Large;
+}
+
+export interface Large {
+    name:   string;
+    hash:   string;
+    ext:    string;
+    mime:   string;
+    path:   null;
+    width:  number;
+    height: number;
+    size:   number;
+    url:    string;
+}
+
 export interface Phone {
     id:     number;
     number: string;
@@ -76,6 +97,23 @@ export interface Social {
     id:       number;
     viber:    string;
     telegram: string;
+}
+
+export interface Menu {
+    id:   number;
+    name: string;
+    item: Item[];
+}
+
+export interface Item {
+    id:   number;
+    name: string;
+    link: string;
+}
+
+export interface Imagemain {
+    id:        number;
+    imagemain: Image;
 }
 
 export interface Meta {
