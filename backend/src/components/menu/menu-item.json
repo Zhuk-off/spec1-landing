@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_menu_menu_items",
+  "info": {
+    "displayName": "Menu-item",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "default": "Главная"
+    },
+    "link": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "default": "#main"
+    }
+  }
+}

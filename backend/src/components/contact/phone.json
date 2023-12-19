@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_contact_phones",
+  "info": {
+    "displayName": "phone",
+    "icon": "phone",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "link": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "default": "tel:+375298347347"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_widgets_headers",
+  "info": {
+    "displayName": "header",
+    "icon": "expand",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "default": "Header"
+    },
+    "phone": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.phone",
+      "required": true
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.email",
+      "required": true
+    },
+    "logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "logo.logo",
+      "required": true
+    },
+    "social": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.social"
+    }
+  }
+}

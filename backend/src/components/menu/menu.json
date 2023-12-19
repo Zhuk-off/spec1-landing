@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_menu_menus",
+  "info": {
+    "displayName": "Menu",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "default": "Header menu",
+      "required": false
+    },
+    "item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.menu-item",
+      "required": true,
+      "min": 4
+    }
+  }
+}

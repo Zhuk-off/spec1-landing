@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import clsx from "clsx";
 import { Dispatch, MouseEvent, SetStateAction } from "react";
@@ -5,7 +6,7 @@ import { Dispatch, MouseEvent, SetStateAction } from "react";
 type IMenuItem = {
   href: string;
   text: string;
-  setOpenMenu: Dispatch<SetStateAction<boolean>>;
+  setOpenMenu?: Dispatch<SetStateAction<boolean>>;
   className?: string;
 };
 
@@ -17,7 +18,9 @@ export const UiMenuItem = ({
 }: IMenuItem) => {
   const handleMenuClick = (e: MouseEvent, link: string) => {
     e.preventDefault();
-    setOpenMenu(false);
+    if (setOpenMenu) {
+      setOpenMenu(false);
+    }
     setTimeout(() => {
       const targetElement = document.querySelector(link);
       if (targetElement) {

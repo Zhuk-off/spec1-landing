@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_widgets_socials",
+  "info": {
+    "displayName": "social",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "viber": {
+      "type": "string",
+      "default": "viber://chat?number=+375298347347"
+    },
+    "telegram": {
+      "type": "string",
+      "default": "https://t.me/+375298347347"
+    }
+  }
+}

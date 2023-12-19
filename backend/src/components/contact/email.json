@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contact_emails",
+  "info": {
+    "displayName": "Email",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "default": "8347347@gmail.com",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_logo_logos",
+  "info": {
+    "displayName": "Logo",
+    "icon": "magic"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false,
+      "default": "Logo-1"
+    },
+    "alt": {
+      "type": "string",
+      "default": "logo",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "default": "/",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

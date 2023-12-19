@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "rich": {
+      "type": "blocks"
+    },
+    "phone": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.phone"
+    }
+  }
+}
