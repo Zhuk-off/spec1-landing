@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_blocks",
+  "info": {
+    "displayName": "block",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "idname": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

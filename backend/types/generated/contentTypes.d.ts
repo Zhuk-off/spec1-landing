@@ -728,6 +728,7 @@ export interface ApiMainMain extends Schema.SingleType {
     Menu: Attribute.Component<'menu.menu'> & Attribute.Required;
     name: Attribute.String;
     imagemain: Attribute.Component<'logo.main-image'> & Attribute.Required;
+    contentSections: Attribute.DynamicZone<['sections.about']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

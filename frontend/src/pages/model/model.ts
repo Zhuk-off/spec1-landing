@@ -6,19 +6,20 @@ export async function getPageBySlug(slug: string) {
 
   const path = `/${slug}`;
   const urlParamsObject = {
-    populate: [
-      "Header",
-      "Header.phone",
-      "Header.email",
-      "Header.logo",
-      "Header.logo.image",
-      "Header.social",
-      "Menu",
-      "Menu.item",
-      "imagemain.imagemain",
-
-      
-    ],
+    populate: {
+      Header: { populate: ["social", "phone", "email", "logo", "logo.image"] },
+      Menu: { populate: ["item"] },
+      imagemain: {
+        populate: ["imagemain"],
+      },
+      contentSections: {
+        on: {
+          "sections.about": {
+            populate: ["slider", "about.image"],
+          },
+        },
+      },
+    },
   };
   const options = { headers: { Authorization: `Bearer ${token}` } };
   return await fetchAPI(path, urlParamsObject, options);

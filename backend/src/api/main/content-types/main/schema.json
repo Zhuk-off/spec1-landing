@@ -32,6 +32,12 @@
       "repeatable": false,
       "component": "logo.main-image",
       "required": true
+    },
+    "contentSections": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.about"
+      ]
     }
   }
 }

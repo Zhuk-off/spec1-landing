@@ -98,6 +98,36 @@ export interface MenuMenu extends Schema.Component {
   };
 }
 
+export interface SectionsAbout extends Schema.Component {
+  collectionName: 'components_sections_abouts';
+  info: {
+    displayName: 'About';
+    description: '';
+  };
+  attributes: {
+    about: Attribute.Component<'shared.block', true> &
+      Attribute.SetMinMax<{
+        max: 2;
+      }>;
+    slider: Attribute.Media;
+  };
+}
+
+export interface SharedBlock extends Schema.Component {
+  collectionName: 'components_shared_blocks';
+  info: {
+    displayName: 'block';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    image: Attribute.Media & Attribute.Required;
+    idname: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface WidgetsHeader extends Schema.Component {
   collectionName: 'components_widgets_headers';
   info: {
@@ -124,6 +154,8 @@ declare module '@strapi/types' {
       'logo.main-image': LogoMainImage;
       'menu.menu-item': MenuMenuItem;
       'menu.menu': MenuMenu;
+      'sections.about': SectionsAbout;
+      'shared.block': SharedBlock;
       'widgets.header': WidgetsHeader;
     }
   }

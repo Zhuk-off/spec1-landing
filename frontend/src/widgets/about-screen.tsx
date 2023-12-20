@@ -25,89 +25,26 @@ import wiloSVG from "/public/slider/wilo.svg";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
+import { About, ContentSection } from "@/shared/lib/types";
+import { Company } from "@/entities/company";
+import { Team } from "@/entities/team";
+import { sectionAboutRenderer } from "./model";
+import { getFullUrl } from "@/shared/lib/constants/helpers/helpers";
 
-export function AboutScreen() {
+interface IAbout {
+  data: ContentSection;
+}
+
+export function AboutScreen({ data }: IAbout) {
+  const title1 = data.about[0];
+
+  const section = data.about.map((section: About, index: number) =>
+    sectionAboutRenderer(section, index),
+  );
   return (
-    <UiSection className="bg-spec-black-light relative" id="about">
+    <UiSection className="relative bg-spec-black-light" id="about">
       <UiContainer>
-        <div className="relative mt-2 flex min-h-[300px] md:px-0 lg:mt-10">
-          <div className="relative z-10 flex w-full flex-col md:w-1/2 ">
-            <UiTitle title="О команде" />
-
-            <div className="text-spec-text-white">
-              <p className="">
-                Мы приглашаем вас узнать больше о нашей компании на этой
-                странице. Здесь вы можете прочитать о нашей истории, узнать о
-                наших ценностях, и о том, как мы стремимся обеспечить нашим
-                клиентам только лучшие продукты и услуги.{" "}
-              </p>
-              <p>
-                Мы приглашаем вас узнать больше о нашей компании на этой
-                странице. Здесь вы можете прочитать о нашей истории, узнать о
-                наших ценностях, и о том, как мы стремимся обеспечить нашим
-                клиентам только лучшие продукты и услуги.{" "}
-              </p>
-              <p>
-                Мы приглашаем вас узнать больше о нашей компании на этой
-                странице. Здесь вы можете прочитать о нашей истории, узнать о
-                наших ценностях, и о том, как мы стремимся обеспечить нашим
-                клиентам только лучшие продукты и услуги.{" "}
-              </p>
-              <p>
-                Мы приглашаем вас узнать больше о нашей компании на этой
-                странице. Здесь вы можете прочитать о нашей истории, узнать о
-                наших ценностях, и о том, как мы стремимся обеспечить нашим
-                клиентам только лучшие продукты и услуги.{" "}
-              </p>
-            </div>
-          </div>
-          <div className="absolute left-0 top-1/2 z-0 max-h-full min-h-[200px] w-full -translate-y-1/2 overflow-hidden md:left-1/3 md:w-2/3">
-            <div className="bg-spec-black-light/50 md:bg-spec-black-light/0 absolute inset-0 z-0 backdrop-blur-sm md:backdrop-blur-0"></div>
-            <div className="to-spec-black-light absolute inset-0 w-1/2 bg-gradient-to-l from-transparent"></div>
-            <div className="to-spec-black-light absolute bottom-0 left-1/2 right-0 top-0 w-1/2 bg-gradient-to-r from-transparent"></div>
-            <Image
-              src={team}
-              alt="team"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="pt-5 md:px-0 md:pt-12">
-          <div className="flex flex-col items-center gap-0 md:flex-row-reverse md:gap-5">
-            <div className="flex-1 shadow-2xl md:px-7 md:py-14">
-              <UiTitle title="О компании" />
-              <div className="text-spec-text-white">
-                <p className="">
-                  Мы приглашаем вас узнать больше о нашей компании на этой
-                  странице. Здесь вы можете прочитать о нашей истории, узнать о
-                  наших ценностях, и о том, как мы стремимся обеспечить нашим
-                  клиентам только лучшие продукты и услуги.{" "}
-                </p>
-                <p>
-                  Мы приглашаем вас узнать больше о нашей компании на этой
-                  странице. Здесь вы можете прочитать о нашей истории, узнать о
-                  наших ценностях, и о том, как мы стремимся обеспечить нашим
-                  клиентам только лучшие продукты и услуги.{" "}
-                </p>
-                <p>
-                  Мы приглашаем вас узнать больше о нашей компании на этой
-                  странице. Здесь вы можете прочитать о нашей истории, узнать о
-                  наших ценностях, и о том, как мы стремимся обеспечить нашим
-                  клиентам только лучшие продукты и услуги.{" "}
-                </p>
-                <p>
-                  Мы приглашаем вас узнать больше о нашей компании на этой
-                  странице. Здесь вы можете прочитать о нашей истории, узнать о
-                  наших ценностях, и о том, как мы стремимся обеспечить нашим
-                  клиентам только лучшие продукты и услуги.{" "}
-                </p>
-              </div>
-            </div>
-            <div className="flex-1">
-              <Image src={spec1} alt="team" className="w-full object-cover" />
-            </div>
-          </div>
-        </div>
+        {section}
         {/* slider */}
         <div className="mt-8 h-12 md:mt-10 lg:mt-20">
           <Swiper
@@ -139,45 +76,21 @@ export function AboutScreen() {
               },
             }}
           >
-            <SwiperSlide>
-              <Image src={aegSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={boschSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={echoSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={efcoSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={fiskarsSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={husqvarnaSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={husqvarnaVikingSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={makitaSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={milwaukeeSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={oleomacSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={ryobiSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={wiloSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={trheeMSVG} alt="brand" className="h-full" />
-            </SwiperSlide>
+            {data.slider.data.map((item, index) => (
+              <SwiperSlide key={index}>
+                <Image
+                  src={getFullUrl(item.attributes.url)}
+                  alt={
+                    item.attributes.alternativeText
+                      ? item.attributes.alternativeText
+                      : "brand"
+                  }
+                  width={item.attributes.width}
+                  height={item.attributes.height}
+                  className="h-full"
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </UiContainer>

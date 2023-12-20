@@ -10,6 +10,7 @@ import { InstallmentScreen } from "@/widgets/installment-screen";
 import { ShippingScreen } from "@/widgets/shipping-screen";
 import { ContactsScreen } from "@/widgets/contacts-screen";
 import { UiFooter } from "@/shared/ui/ui-footer";
+import { sectionRenderer } from "../model/section-renderer";
 
 const menuMock = [
   {
@@ -51,8 +52,9 @@ export function HomePageView({ data }: { data: Welcome }) {
     width: dataRes.imagemain.imagemain.data.attributes.width,
     height: dataRes.imagemain.imagemain.data.attributes.height,
   };
-
-  
+  const section = dataRes.contentSections.map((section: any, index: number) =>
+    sectionRenderer(section, index),
+  );
 
   return (
     <main
@@ -71,7 +73,7 @@ export function HomePageView({ data }: { data: Welcome }) {
         mainImage={mainImage}
       />
 
-      <AboutScreen />
+      {section}
 
       <StorefrontScreen />
 
