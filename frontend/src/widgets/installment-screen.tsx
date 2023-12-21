@@ -44,7 +44,7 @@ export function InstallmentScreen({ data }: { data: ContentSection }) {
                     height: height,
                     width: width,
                   }}
-                  desc={item.description}
+                  description={item.description}
                 />
               );
             })
@@ -57,24 +57,9 @@ export function InstallmentScreen({ data }: { data: ContentSection }) {
                 height: infoblock.image.data.attributes.height,
                 width: infoblock.image.data.attributes.width,
               }}
-              desc={infoblock.description}
+              description={infoblock.description}
             />
           )}
-
-          {/* <UiCard
-            title={"Халва - 2 мес "}
-            image={card1}
-            desc={
-              "Мы приглашаем вас узнать больше о нашей компании на этой странице. Здесь вы можете прочитать о нашей истории, узнать о наших ценностях, и о том, как мы стремимся обеспечить нашим клиентам предложений."
-            }
-          />
-          <UiCard
-            title={"Халва - 2 мес "}
-            image={card1}
-            desc={
-              "Мы приглашаем вас узнать больше о нашей компании на этой странице. Здесь вы можете прочитать о нашей истории, узнать о наших ценностях, и о том, как мы стремимся обеспечить нашим клиентам предложений."
-            }
-          /> */}
         </div>
       </UiContainer>
     </UiSection>

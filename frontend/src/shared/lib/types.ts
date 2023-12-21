@@ -138,7 +138,7 @@ export interface ContentSection {
   title: string;
   slider?: Slider;
   infoblock: InfoblockElement[] | InfoblockElement;
-  description1?: Description1[];
+  description1?: Description[];
   description2?: Description[];
   description?: Description[];
   greenprice?: string;
@@ -147,31 +147,50 @@ export interface ContentSection {
 }
 
 export interface Description {
-  type: string;
+  type: DescriptionType;
   children: DescriptionChild[];
+  format?: Format;
 }
 
 export interface DescriptionChild {
-  type: string;
-  text: string;
-}
-
-export interface Description1 {
-  type: string;
-  children: Description1Child[];
-}
-
-export interface Description1Child {
-  type: string;
-  text: string;
+  type: ChildType;
+  text?: string;
   bold?: boolean;
+  italic?: boolean;
+  underline?: boolean;
+  children?: ChildChild[];
+}
+
+export interface ChildChild {
+  type: ChildType;
+  text: Text;
+}
+
+export enum Text {
+  Dolorem = "Dolorem.",
+  IsteMolestiaeDebitis = "iste molestiae debitis ",
+  Magni = "magni? ",
+}
+
+export enum ChildType {
+  ListItem = "list-item",
+  Text = "text",
+}
+
+export enum Format {
+  Unordered = "unordered",
+}
+
+export enum DescriptionType {
+  List = "list",
+  Paragraph = "paragraph",
 }
 
 export interface InfoblockElement {
   id: number;
   title: string;
-  description: string;
   idname: string;
+  description: Description[];
   image: Image;
 }
 

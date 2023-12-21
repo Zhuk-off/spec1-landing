@@ -23,7 +23,11 @@ export function ShippingScreen({ data }: { data: ContentSection }) {
           <div className="relative z-10 max-w-2xl overflow-y-auto sm:px-5 lg:w-[500px] lg:px-0 lg:pt-20">
             <UiTitle title={title} className="text-white" />
             <div className="text-spec-text-white lg:max-h-12 lg:pl-28">
-              {!Array.isArray(infoblock) && infoblock.description}
+              {!Array.isArray(infoblock) && (
+                <BlocksRenderer
+                  content={infoblock.description as BlocksContent}
+                />
+              )}
             </div>
           </div>
           <div className="inline-block lg:relative lg:grow">

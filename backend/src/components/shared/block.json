@@ -10,9 +10,6 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -24,6 +21,9 @@
     "idname": {
       "type": "string",
       "required": true
+    },
+    "description": {
+      "type": "blocks"
     }
   }
 }

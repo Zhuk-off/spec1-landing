@@ -1,6 +1,8 @@
 import clsx from "clsx";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { getFullUrl } from "../lib/constants/helpers/helpers";
+import { Description } from "../lib/types";
+import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 type ICard = {
   title: string;
@@ -10,11 +12,11 @@ type ICard = {
     width: number;
     height: number;
   };
-  desc: string;
+  description: Description[];
   className?: string;
 };
 
-export const UiCard = ({ title, desc, image, className }: ICard) => {
+export const UiCard = ({ title, description, image, className }: ICard) => {
   return (
     <div
       className={clsx("flex items-center md:gap-x-8 lg:gap-x-14", className)}
@@ -32,7 +34,9 @@ export const UiCard = ({ title, desc, image, className }: ICard) => {
         <h3 className="mb-3 max-w-2xl font-specTitle text-2xl font-bold uppercase text-spec-gold-light md:text-2xl lg:text-4xl">
           {title}
         </h3>
-        <div className="max-w-2xl text-spec-text-white">{desc}</div>
+        <div className="max-w-2xl text-spec-text-white">
+          <BlocksRenderer content={description as BlocksContent} />
+        </div>
       </div>
     </div>
   );

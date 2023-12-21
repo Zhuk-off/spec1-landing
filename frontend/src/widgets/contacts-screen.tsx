@@ -2,6 +2,7 @@ import { ContentSection } from "@/shared/lib/types";
 import UiContainer from "@/shared/ui/layouts/ui-container";
 import UiSection from "@/shared/ui/layouts/ui-section";
 import { UiTitle } from "@/shared/ui/ui-title";
+import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 export function ContactsScreen({ data }: { data: ContentSection }) {
   const { title, infoblock } = data;
@@ -14,7 +15,12 @@ export function ContactsScreen({ data }: { data: ContentSection }) {
             <div className="text-spec-text-white">
               {Array.isArray(infoblock) &&
                 infoblock.map((item, index) => {
-                  return item.description;
+                  return (
+                    <BlocksRenderer
+                      key={index}
+                      content={item.description as BlocksContent}
+                    />
+                  );
                 })}
             </div>
           </div>

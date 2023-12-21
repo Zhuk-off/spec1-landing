@@ -1,14 +1,16 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { getFullUrl } from "../lib/constants/helpers/helpers";
+import { Description } from "../lib/types";
+import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 type IShopCat = {
   image: {
     url: string;
-    alt: string | null;
+    alt: string;
   };
   title: string;
-  desc: string;
+  description: Description[];
   position: "left" | "right";
   className?: string;
 };
@@ -16,7 +18,7 @@ type IShopCat = {
 export const UiShopCat = ({
   image,
   title,
-  desc,
+  description,
   position = "left",
   className,
 }: IShopCat) => {
@@ -30,10 +32,10 @@ export const UiShopCat = ({
       )}
     >
       <Image
-        src={getFullUrl(image.url)}
+        src={image.url}
         width={382}
         height={514}
-        alt={image.alt ? image.alt : "Storefront"}
+        alt={image.alt}
         className={clsx(
           `w-full object-cover sm:h-[514px] sm:w-[382px] sm:flex-[1_2_0%] xl:absolute xl:-top-[80px]`,
           xPosition,
@@ -47,13 +49,13 @@ export const UiShopCat = ({
         >
           {title}
         </h3>
-        <p
+        <div
           className={`pr-1 text-base text-spec-text-white ${
             position === "left" ? "sm:text-left" : "sm:text-right"
           }`}
         >
-          {desc}
-        </p>
+          <BlocksRenderer content={description as BlocksContent} />
+        </div>
       </div>
     </div>
   );

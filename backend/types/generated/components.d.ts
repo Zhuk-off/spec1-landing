@@ -185,9 +185,9 @@ export interface SharedBlock extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.RichText;
     image: Attribute.Media & Attribute.Required;
     idname: Attribute.String & Attribute.Required;
+    description: Attribute.Blocks;
   };
 }
 
