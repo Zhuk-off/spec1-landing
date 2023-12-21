@@ -1,4 +1,5 @@
 import { Welcome } from "@/shared/lib/types";
+import { Metadata, ResolvingMetadata } from "next";
 import qs from "qs";
 
 export default async function getPageBySlug(slug: string) {
@@ -77,4 +78,21 @@ export async function fetchAPI(
       `Please check if your server is running and you set all the required tokens.`,
     );
   }
+}
+
+export async function generateMeta(): Promise<Metadata> {
+  const page = await getPageBySlug("main");
+  if (page.data?.id)
+    return {
+      title: page.data.attributes.seo.title,
+      description: page.data.attributes.seo.description,
+      robots: page.data.attributes.seo.robots,
+      alternates: {
+        canonical: page.data.attributes.seo.canonical,
+      },
+    } as Metadata;
+  return {
+    title: "Спец 1",
+    description: "",
+  };
 }

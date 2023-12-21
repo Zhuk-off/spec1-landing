@@ -1,3 +1,4 @@
+
 export interface Welcome {
   data: Data;
   meta: Meta;
