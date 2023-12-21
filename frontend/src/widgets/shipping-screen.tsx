@@ -18,7 +18,7 @@ export function ShippingScreen({ data }: { data: ContentSection }) {
   } = data;
 
   return (
-    <UiSection className="bg-spec-bg-black" id="ship">
+    <UiSection className="bg-spec-bg-black" id={data.linkForMenu}>
       <UiContainer>
         <div className="relative flex lg:static lg:flex-row-reverse">
           <div className="relative z-10 max-w-2xl overflow-y-auto sm:px-5 lg:w-[500px] lg:px-0 lg:pt-20">

@@ -23,6 +23,11 @@
     "title": {
       "type": "string",
       "required": true
+    },
+    "linkForMenu": {
+      "type": "string",
+      "required": true,
+      "unique": false
     }
   }
 }

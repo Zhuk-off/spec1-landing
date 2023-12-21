@@ -33,6 +33,10 @@
       "type": "component",
       "repeatable": false,
       "component": "contact.social"
+    },
+    "linkForMenu": {
+      "type": "string",
+      "required": true
     }
   }
 }

@@ -4,41 +4,42 @@ export interface Welcome {
 }
 
 export interface Data {
-  id: number;
+  id:         number;
   attributes: PurpleAttributes;
 }
 
 export interface PurpleAttributes {
-  createdAt: Date;
-  updatedAt: Date;
-  publishedAt: Date;
-  name: string;
-  Header: Header;
-  footer: Footer;
-  Menu: Menu;
-  imagemain: Imagemain;
+  createdAt:       Date;
+  updatedAt:       Date;
+  publishedAt:     Date;
+  name:            string;
+  Header:          Header;
+  footer:          Footer;
+  Menu:            Menu;
+  imagemain:       Imagemain;
   contentSections: ContentSection[];
 }
 
 export interface Header {
-  id: number;
-  name: string;
-  social: Social;
-  phone: Phone;
-  email: Email;
-  logo: Logo;
+  id:          number;
+  name:        string;
+  linkForMenu: string;
+  social:      Social;
+  phone:       Phone;
+  email:       Email;
+  logo:        Logo;
 }
 
 export interface Email {
-  id: number;
+  id:    number;
   email: string;
 }
 
 export interface Logo {
-  id: number;
-  name: string;
-  alt: string;
-  link: string;
+  id:    number;
+  name:  string;
+  alt:   string;
+  link:  string;
   image: Image;
 }
 
@@ -47,27 +48,27 @@ export interface Image {
 }
 
 export interface DAT {
-  id: number;
+  id:         number;
   attributes: DatumAttributes;
 }
 
 export interface DatumAttributes {
-  name: string;
-  alternativeText: null | string;
-  caption: null;
-  width: number;
-  height: number;
-  formats: Formats | null;
-  hash: string;
-  ext: EXT;
-  mime: MIME;
-  size: number;
-  url: string;
-  previewUrl: null;
-  provider: Provider;
+  name:              string;
+  alternativeText:   null | string;
+  caption:           null;
+  width:             number;
+  height:            number;
+  formats:           Formats | null;
+  hash:              string;
+  ext:               EXT;
+  mime:              MIME;
+  size:              number;
+  url:               string;
+  previewUrl:        null;
+  provider:          Provider;
   provider_metadata: null;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt:         Date;
+  updatedAt:         Date;
 }
 
 export enum EXT {
@@ -80,21 +81,21 @@ export enum EXT {
 
 export interface Formats {
   thumbnail: Large;
-  medium: Large;
-  small: Large;
-  large?: Large;
+  medium:    Large;
+  small:     Large;
+  large?:    Large;
 }
 
 export interface Large {
-  name: string;
-  hash: string;
-  ext: EXT;
-  mime: MIME;
-  path: null;
-  width: number;
+  name:   string;
+  hash:   string;
+  ext:    EXT;
+  mime:   MIME;
+  path:   null;
+  width:  number;
   height: number;
-  size: number;
-  url: string;
+  size:   number;
+  url:    string;
 }
 
 export enum MIME {
@@ -109,56 +110,58 @@ export enum Provider {
 }
 
 export interface Phone {
-  id: number;
+  id:     number;
   number: string;
-  link: string;
+  link:   string;
 }
 
 export interface Social {
-  id: number;
-  viber: string;
+  id:       number;
+  viber:    string;
   telegram: string;
 }
 
 export interface Menu {
-  id: number;
+  id:   number;
   name: string;
   item: Item[];
 }
 
 export interface Item {
-  id: number;
+  id:   number;
   name: string;
   link: string;
 }
 
 export interface ContentSection {
-  id: number;
-  __component: string;
-  title: string;
-  slider?: Slider;
-  infoblock: InfoblockElement[] | InfoblockElement;
+  id:            number;
+  __component:   string;
+  title:         string;
+  linkForMenu:   string;
+  slider?:       Slider;
+  infoblock:     InfoblockElement[] | InfoblockElement;
   description1?: Description[];
   description2?: Description[];
-  description?: Description[];
-  greenprice?: string;
-  yellowprice?: string;
-  purpleprice?: string;
+  description?:  Description[];
+  greenprice?:   string;
+  yellowprice?:  string;
+  purpleprice?:  string;
 }
 
 export interface Description {
-  type: DescriptionType;
+  type:     DescriptionType;
   children: DescriptionChild[];
-  format?: Format;
+  format?:  Format;
 }
 
 export interface DescriptionChild {
-  type: ChildType;
-  text?: string;
-  bold?: boolean;
-  italic?: boolean;
+  type:       ChildType;
+  text?:      string;
+  bold?:      boolean;
+  italic?:    boolean;
   underline?: boolean;
-  children?: ChildChild[];
+  children?:  ChildChild[];
+  url?:       string;
 }
 
 export interface ChildChild {
@@ -170,9 +173,11 @@ export enum Text {
   Dolorem = "Dolorem.",
   IsteMolestiaeDebitis = "iste molestiae debitis ",
   Magni = "magni? ",
+  ZhukkoffBy = "Zhukkoff.by",
 }
 
 export enum ChildType {
+  Link = "link",
   ListItem = "list-item",
   Text = "text",
 }
@@ -187,11 +192,11 @@ export enum DescriptionType {
 }
 
 export interface InfoblockElement {
-  id: number;
-  title: string;
-  idname: string;
+  id:          number;
+  title:       string;
+  idname:      string;
   description: Description[];
-  image: Image;
+  image:       Image;
 }
 
 export interface Slider {
@@ -199,19 +204,20 @@ export interface Slider {
 }
 
 export interface Footer {
-  id: number;
-  working: string;
-  address: string;
+  id:        number;
+  working:   string;
+  address:   string;
   copyright: string;
-  logo: Logo;
-  phone: Phone;
-  email: Email;
-  social: Social;
+  logo:      Logo;
+  phone:     Phone;
+  email:     Email;
+  social:    Social;
 }
 
 export interface Imagemain {
-  id: number;
+  id:        number;
   imagemain: Image;
 }
 
-export interface Meta {}
+export interface Meta {
+}

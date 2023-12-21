@@ -9,6 +9,7 @@ export function UiHeader({
   logo,
   openMenu,
   setOpenMenu,
+  id,
 }: {
   className?: string;
   links?: ReactNode;
@@ -16,9 +17,11 @@ export function UiHeader({
   logo?: ReactNode;
   openMenu: boolean;
   setOpenMenu: Dispatch<SetStateAction<boolean>>;
+  id: string;
 }) {
   return (
     <header
+      id={id}
       className={clsx(
         "flex w-full items-center justify-between px-2 py-4 sm:px-6 sm:py-6",
         className,

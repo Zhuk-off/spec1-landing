@@ -111,6 +111,7 @@ export interface SectionsAbout extends Schema.Component {
       }>;
     slider: Attribute.Media;
     title: Attribute.String & Attribute.Required;
+    linkForMenu: Attribute.String & Attribute.Required;
   };
 }
 
@@ -127,6 +128,7 @@ export interface SectionsContacts extends Schema.Component {
       Attribute.SetMinMax<{
         min: 1;
       }>;
+    linkForMenu: Attribute.String & Attribute.Required;
   };
 }
 
@@ -141,6 +143,7 @@ export interface SectionsInstallment extends Schema.Component {
     description1: Attribute.Blocks & Attribute.Required;
     description2: Attribute.Blocks & Attribute.Required;
     infoblock: Attribute.Component<'shared.block', true>;
+    linkForMenu: Attribute.String & Attribute.Required;
   };
 }
 
@@ -157,6 +160,7 @@ export interface SectionsShipping extends Schema.Component {
     greenprice: Attribute.String & Attribute.Required;
     yellowprice: Attribute.String & Attribute.Required;
     purpleprice: Attribute.String & Attribute.Required;
+    linkForMenu: Attribute.String & Attribute.Required;
   };
 }
 
@@ -173,6 +177,7 @@ export interface SectionsShop extends Schema.Component {
       Attribute.SetMinMax<{
         min: 3;
       }>;
+    linkForMenu: Attribute.String & Attribute.Required;
   };
 }
 
@@ -221,6 +226,7 @@ export interface WidgetsHeader extends Schema.Component {
     email: Attribute.Component<'contact.email'> & Attribute.Required;
     logo: Attribute.Component<'logo.logo'> & Attribute.Required;
     social: Attribute.Component<'contact.social'>;
+    linkForMenu: Attribute.String & Attribute.Required;
   };
 }
 

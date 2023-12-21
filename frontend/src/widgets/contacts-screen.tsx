@@ -8,7 +8,7 @@ import { BlocksContent } from "@strapi/blocks-react-renderer";
 export function ContactsScreen({ data }: { data: ContentSection }) {
   const { title, infoblock } = data;
   return (
-    <UiSection className="relative bg-spec-black-light" id="contact">
+    <UiSection className="relative bg-spec-black-light" id={data.linkForMenu}>
       <UiContainer>
         <div className="flex flex-col gap-5 md:flex-row md:gap-6 lg:gap-12">
           <div className="flex-1">

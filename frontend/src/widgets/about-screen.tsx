@@ -18,7 +18,7 @@ export function AboutScreen({ data }: { data: ContentSection }) {
       )
     : sectionAboutRenderer(data.infoblock, 1);
   return (
-    <UiSection className="relative bg-spec-black-light" id="about">
+    <UiSection className="relative bg-spec-black-light" id={data.linkForMenu}>
       <UiContainer>
         {section}
         {/* slider */}

@@ -28,7 +28,6 @@ export function HomePageView({ data }: { data: Welcome }) {
 
   return (
     <main
-      id="main"
       className={clsx(
         "relative min-h-full bg-scroll",
         openMenu && "h-screen overflow-hidden",

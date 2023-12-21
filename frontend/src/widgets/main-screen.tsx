@@ -46,6 +46,7 @@ export function MainScreen({
       <div className="bg-spec-bg-black">
         <UiContainer>
           <UiHeader
+            id={header.linkForMenu}
             openMenu={openMenu}
             setOpenMenu={setOpenMenu}
             contacts={

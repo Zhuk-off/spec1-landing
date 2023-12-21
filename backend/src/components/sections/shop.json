@@ -16,6 +16,10 @@
       "component": "shared.block",
       "required": true,
       "min": 3
+    },
+    "linkForMenu": {
+      "type": "string",
+      "required": true
     }
   }
 }

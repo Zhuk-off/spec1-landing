@@ -8,7 +8,7 @@ import { getFullUrl } from "@/shared/lib/constants/helpers/helpers";
 export function StorefrontScreen({ data }: { data: ContentSection }) {
   const { title, infoblock } = data;
   return (
-    <UiSection id="shop">
+    <UiSection id={data.linkForMenu}>
       <UiContainer>
         <UiTitle title={title} />
         <div className="sm:py-5 md:py-10 xl:px-32 xl:py-32 2xl:px-44">

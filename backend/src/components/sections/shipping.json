@@ -31,6 +31,10 @@
     "purpleprice": {
       "type": "string",
       "required": true
+    },
+    "linkForMenu": {
+      "type": "string",
+      "required": true
     }
   }
 }

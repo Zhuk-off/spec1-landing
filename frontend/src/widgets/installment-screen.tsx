@@ -12,7 +12,7 @@ export function InstallmentScreen({ data }: { data: ContentSection }) {
   const description1 = data.description1;
   const description2 = data.description2;
   return (
-    <UiSection className="bg-spec-black-light" id="installment">
+    <UiSection className="bg-spec-black-light" id={data.linkForMenu}>
       <UiContainer>
         <UiTitle title={title} />
         <div className="flex flex-col gap-5 text-spec-text-white md:flex-row md:gap-8 lg:gap-14">
