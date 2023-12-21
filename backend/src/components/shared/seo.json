@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "seo"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "robots": {
+      "type": "string",
+      "required": true,
+      "default": "index, follow"
+    },
+    "canonical": {
+      "type": "string",
+      "required": true,
+      "default": "https://spec1.by/"
+    }
+  }
+}

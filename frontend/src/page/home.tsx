@@ -1,7 +1,7 @@
-import { getPageBySlug } from "./model/model";
-import { HomePageView } from "./ui/home-page";
+import getPageBySlug from "./model/model";
+import HomePageView from "./ui/home-page";
 
-export async function HomePage() {
+export default async function HomePage() {
   // try {
   const page = await getPageBySlug("main");
   // console.log('page', page.data[0].attributes)

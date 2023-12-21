@@ -196,6 +196,23 @@ export interface SharedBlock extends Schema.Component {
   };
 }
 
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'seo';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String;
+    robots: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'index, follow'>;
+    canonical: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'https://spec1.by/'>;
+  };
+}
+
 export interface WidgetsFooter extends Schema.Component {
   collectionName: 'components_widgets_footers';
   info: {
@@ -246,6 +263,7 @@ declare module '@strapi/types' {
       'sections.shipping': SectionsShipping;
       'sections.shop': SectionsShop;
       'shared.block': SharedBlock;
+      'shared.seo': SharedSeo;
       'widgets.footer': WidgetsFooter;
       'widgets.header': WidgetsHeader;
     }

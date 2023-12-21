@@ -18,6 +18,7 @@ export interface PurpleAttributes {
   Menu:            Menu;
   imagemain:       Imagemain;
   contentSections: ContentSection[];
+  seo:             SEO;
 }
 
 export interface Header {
@@ -217,6 +218,14 @@ export interface Footer {
 export interface Imagemain {
   id:        number;
   imagemain: Image;
+}
+
+export interface SEO {
+  id:          number;
+  title:       string;
+  description: string;
+  robots:      string;
+  canonical:   string;
 }
 
 export interface Meta {

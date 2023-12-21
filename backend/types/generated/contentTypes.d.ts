@@ -389,6 +389,7 @@ export interface ApiMainMain extends Schema.SingleType {
     > &
       Attribute.Required;
     footer: Attribute.Component<'widgets.footer'> & Attribute.Required;
+    seo: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

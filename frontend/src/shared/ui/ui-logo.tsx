@@ -16,6 +16,7 @@ export const UiLogo = ({ logoUrl, className }: ILogo) => {
         alt="logo"
         width={180}
         height={70}
+        priority
         className="transition-transform md:hover:scale-[101%]"
       />
     </Link>

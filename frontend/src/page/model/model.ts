@@ -1,7 +1,7 @@
 import { Welcome } from "@/shared/lib/types";
 import qs from "qs";
 
-export async function getPageBySlug(slug: string) {
+export default async function getPageBySlug(slug: string) {
   const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
 
   const path = `/${slug}`;
@@ -9,6 +9,7 @@ export async function getPageBySlug(slug: string) {
     populate: {
       Header: { populate: ["social", "phone", "email", "logo", "logo.image"] },
       footer: { populate: ["logo", "logo.image", "phone", "email", "social"] },
+      seo: { populate: "*" },
       Menu: { populate: ["item"] },
       imagemain: {
         populate: ["imagemain"],

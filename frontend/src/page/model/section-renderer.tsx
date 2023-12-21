@@ -4,7 +4,7 @@ import { InstallmentScreen } from "@/widgets/installment-screen";
 import { ShippingScreen } from "@/widgets/shipping-screen";
 import { StorefrontScreen } from "@/widgets/storefront-screen";
 
-export function sectionRenderer(section: any, index: number) {
+export default function sectionRenderer(section: any, index: number) {
   switch (section.__component) {
     case "sections.about":
       return <AboutScreen key={index} data={section} />;

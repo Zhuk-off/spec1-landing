@@ -7,7 +7,6 @@ import { BlocksContent } from "@strapi/blocks-react-renderer";
 import { StyledBlocksRenderer } from "@/entities/rich-text";
 
 export function InstallmentScreen({ data }: { data: ContentSection }) {
-  console.log("data---", data);
   const { title, infoblock } = data;
   const description1 = data.description1;
   const description2 = data.description2;

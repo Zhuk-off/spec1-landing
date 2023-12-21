@@ -4,10 +4,10 @@ import clsx from "clsx";
 import { Welcome } from "@/shared/lib/types";
 import { MainScreen } from "@/widgets/main-screen";
 import { UiFooter } from "@/shared/ui/ui-footer";
-import { sectionRenderer } from "../model/section-renderer";
+import sectionRenderer from "../model/section-renderer";
 import { getFullUrl } from "@/shared/lib/constants/helpers/helpers";
 
-export function HomePageView({ data }: { data: Welcome }) {
+export default function HomePageView({ data }: { data: Welcome }) {
   const [openMenu, setOpenMenu] = useState(false);
   const dataRes = data.data.attributes;
   const header = dataRes.Header;
