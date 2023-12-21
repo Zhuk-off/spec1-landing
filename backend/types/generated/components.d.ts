@@ -204,6 +204,7 @@ export interface WidgetsFooter extends Schema.Component {
     phone: Attribute.Component<'contact.phone'> & Attribute.Required;
     email: Attribute.Component<'contact.email'> & Attribute.Required;
     social: Attribute.Component<'contact.social'> & Attribute.Required;
+    copyright: Attribute.String & Attribute.Required;
   };
 }
 

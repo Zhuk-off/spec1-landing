@@ -35,6 +35,10 @@
       "repeatable": false,
       "component": "contact.social",
       "required": true
+    },
+    "copyright": {
+      "type": "string",
+      "required": true
     }
   }
 }

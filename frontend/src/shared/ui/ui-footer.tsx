@@ -13,15 +13,32 @@ export function UiFooter({
   className,
   logoImg,
   menu,
+  address,
+  working,
+  phone,
+  phoneLink,
+  mail,
+  viberLink,
+  telegramLink,
+  copyright,
 }: {
   className?: string;
   links?: ReactNode;
   contacts?: ReactNode;
   logoImg: string;
   menu: {
-    text: string;
+    id: number;
+    name: string;
     link: string;
   }[];
+  address: string;
+  working: string;
+  phone: string;
+  phoneLink: string;
+  mail: string;
+  viberLink: string;
+  telegramLink: string;
+  copyright: string;
 }) {
   return (
     <footer
@@ -34,33 +51,28 @@ export function UiFooter({
         <div className="flex flex-col justify-between gap-10 sm:flex-row sm:gap-0">
           <div className="order-3 flex-1 font-bold tracking-wide text-spec-gold-light sm:order-1 sm:font-specTitle sm:text-xl">
             <div className="flex flex-col items-center gap-3 text-center sm:max-w-xs sm:items-start sm:gap-10 sm:text-start">
-              <div className="">Время работы: 9:00-19:00 без выходных</div>
-              <div className="">
-                г. Витебск ул. Терешковой 1, СтройМаркет Энергия павильон 1
-              </div>
+              <div className="">{working}</div>
+              <div className="">{address}</div>
             </div>
           </div>
 
           <div className="order-1 flex flex-1 flex-col items-center sm:order-2">
             <UiLogo logoUrl={logoImg} />
             <div className="mt-2">
-              <UiPhone
-                phone={"+375 (29) 516-44-44"}
-                phoneLink="+375295116444"
-              />
-              <UiMail mail="zhukoff@gmail.com" />
+              <UiPhone phone={phone} phoneLink={phoneLink} />
+              <UiMail mail={mail} />
             </div>
 
             <div className="mt-10 flex gap-5">
               <UiSocialIcon
                 icon={<SvgTelegram />}
-                href="https://t.me/+375445959498"
+                href={telegramLink}
                 ariaLabel="Telegram"
                 className="text-spec-gold-light-hover transition-colors md:hover:text-spec-gold-light"
               />
               <UiSocialIcon
                 icon={<SvgViber />}
-                href="viber://chat?number=+375445959498"
+                href={viberLink}
                 ariaLabel="Viber"
                 className="text-spec-gold-light-hover transition-colors md:hover:text-spec-gold-light"
               />
@@ -74,7 +86,7 @@ export function UiFooter({
                   <li key={index}>
                     <UiMenuItem
                       href={item.link}
-                      text={item.text}
+                      text={item.name}
                       className="text-lg"
                     />
                   </li>
@@ -84,7 +96,7 @@ export function UiFooter({
           </div>
         </div>
         <div className="text pb-3 pt-10 text-center text-spec-gold-light">
-          © 2024 ЧТПУП Аникогрупп все права защищены
+          {copyright}
         </div>
       </UiContainer>
     </footer>

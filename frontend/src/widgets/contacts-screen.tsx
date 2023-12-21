@@ -1,28 +1,21 @@
+import { ContentSection } from "@/shared/lib/types";
 import UiContainer from "@/shared/ui/layouts/ui-container";
 import UiSection from "@/shared/ui/layouts/ui-section";
 import { UiTitle } from "@/shared/ui/ui-title";
 
-export function ContactsScreen() {
+export function ContactsScreen({ data }: { data: ContentSection }) {
+  const { title, infoblock } = data;
   return (
-    <UiSection className="bg-spec-black-light relative" id="contact">
+    <UiSection className="relative bg-spec-black-light" id="contact">
       <UiContainer>
         <div className="flex flex-col gap-5 md:flex-row md:gap-6 lg:gap-12">
           <div className="flex-1">
-            <UiTitle title="Контакты" className="" />
+            <UiTitle title={title} className="" />
             <div className="text-spec-text-white">
-              Мы приглашаем вас узнать больше о нашей компании на этой странице.
-              Здесь вы можете прочитать о нашей истории, узнать о наших
-              ценностях, и о том, как мы стремимся обеспечить нашим клиентам
-              предложений.Мы приглашаем вас узнать больше о нашей компании на
-              этой странице. Здесь вы можете прочитать о нашей истории, узнать о
-              наших ценностях, и о том, как мы стремимся обеспечить нашим
-              клиентам предложений.Мы приглашаем вас узнать больше о нашей
-              компании на этой странице. Здесь вы можете прочитать о нашей
-              истории, узнать о наших ценностях, и о том, как мы стремимся
-              обеспечить нашим клиентам предложений.Мы приглашаем вас узнать
-              больше о нашей компании на этой странице. Здесь вы можете
-              прочитать о нашей истории, узнать о наших ценностях, и о том, как
-              мы стремимся обеспечить нашим клиентам предложений.
+              {Array.isArray(infoblock) &&
+                infoblock.map((item, index) => {
+                  return item.description;
+                })}
             </div>
           </div>
           <div className="flex-1 border-2 border-spec-gold-light drop-shadow-2xl  sm:border-4">

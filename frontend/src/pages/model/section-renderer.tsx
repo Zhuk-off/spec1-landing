@@ -1,5 +1,7 @@
 import { AboutScreen } from "@/widgets/about-screen";
+import { ContactsScreen } from "@/widgets/contacts-screen";
 import { InstallmentScreen } from "@/widgets/installment-screen";
+import { ShippingScreen } from "@/widgets/shipping-screen";
 import { StorefrontScreen } from "@/widgets/storefront-screen";
 
 export function sectionRenderer(section: any, index: number) {
@@ -7,15 +9,13 @@ export function sectionRenderer(section: any, index: number) {
     case "sections.about":
       return <AboutScreen key={index} data={section} />;
     case "sections.shop":
-        return <StorefrontScreen  key={index} data={section} />
+      return <StorefrontScreen key={index} data={section} />;
     case "sections.installment":
-        return <InstallmentScreen  key={index} data={section} />
-    //   case "sections.testimonials-group":
-    //     return <InstallmentScreen />
-    //   case "sections.pricing":
-    //     return <ShippingScreen />
-    //   case "sections.lead-form":
-    //     return <Email key={index} data={section} />;
+      return <InstallmentScreen key={index} data={section} />;
+    case "sections.shipping":
+      return <ShippingScreen key={index} data={section} />;
+    case "sections.contacts":
+      return <ContactsScreen key={index} data={section} />;
     default:
       return null;
   }

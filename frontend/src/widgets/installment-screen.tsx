@@ -2,8 +2,6 @@ import UiContainer from "@/shared/ui/layouts/ui-container";
 import UiSection from "@/shared/ui/layouts/ui-section";
 import { UiCard } from "@/shared/ui/ui-card";
 import { UiTitle } from "@/shared/ui/ui-title";
-import shop from "/public/shop1.jpg";
-import card1 from "/public/cards/card1.png";
 import { ContentSection } from "@/shared/lib/types";
 import {
   BlocksRenderer,
