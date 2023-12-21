@@ -36,12 +36,13 @@ export function MainScreen({
     header.logo.image.data.attributes.url;
 
   return (
-    <div
-      className={clsx(
+    <>
+      {/* <div
+    className={clsx(
         "flex min-h-screen flex-col",
-        openMenu && "h-screen overflow-hidden",
+    openMenu && "h-screen overflow-hidden",
       )}
-    >
+     > */}
       <div className="bg-spec-bg-black">
         <UiContainer>
           <UiHeader
@@ -77,7 +78,7 @@ export function MainScreen({
         </UiContainer>
       </div>
 
-      <div className="sticky top-0 z-30 bg-black/70">
+      <div className="sticky top-0 z-30 bg-black/70 sm:backdrop-blur-[2px]">
         <UiContainer>
           <UiMenu
             menuData={menu}
@@ -88,8 +89,8 @@ export function MainScreen({
       </div>
 
       {/* Central image and filters start  */}
-      <div className="flex grow flex-col justify-center">
-        <div className="relative flex grow flex-col justify-center bg-black pr-5 pt-20 sm:pt-10">
+      <div className="mainheight flex grow flex-col justify-center">
+        <div className="relative flex grow flex-col justify-center bg-black pr-5 pt-16 sm:pt-10">
           <Image
             alt={mainImage?.alt ? mainImage.alt : ""}
             src={mainImage.url}
@@ -105,6 +106,7 @@ export function MainScreen({
       </div>
       {/* <div className="from-spec-black-light h-8 bg-gradient-to-t to-black md:h-20"></div> */}
       {/* Central image and filters end  */}
-    </div>
+    </>
+    // </div>
   );
 }

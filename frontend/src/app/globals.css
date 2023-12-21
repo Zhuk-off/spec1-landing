@@ -8,32 +8,35 @@
 
 ::-webkit-scrollbar {
   width: 5px;
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #F7E98C;
+  background-color: #f7e98c;
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
 }
 .scroll-spec::-webkit-scrollbar {
   width: 5px;
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
 }
 
 .scroll-spec::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #F7E98C;
+  background-color: #f7e98c;
 }
 
 .scroll-spec::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
 }
 
+.mainheight {
+  min-height: calc(100vh - 102px);
+}
