@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_sections_shippings",
+  "info": {
+    "displayName": "Shipping",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "infoblock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.block",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "greenprice": {
+      "type": "string",
+      "required": true
+    },
+    "yellowprice": {
+      "type": "string",
+      "required": true
+    },
+    "purpleprice": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

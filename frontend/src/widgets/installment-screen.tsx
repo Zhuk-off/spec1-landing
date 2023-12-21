@@ -4,40 +4,66 @@ import { UiCard } from "@/shared/ui/ui-card";
 import { UiTitle } from "@/shared/ui/ui-title";
 import shop from "/public/shop1.jpg";
 import card1 from "/public/cards/card1.png";
+import { ContentSection } from "@/shared/lib/types";
+import {
+  BlocksRenderer,
+  type BlocksContent,
+} from "@strapi/blocks-react-renderer";
 
-export function InstallmentScreen() {
+export function InstallmentScreen({ data }: { data: ContentSection }) {
+  console.log("data---", data);
+  const { title, infoblock } = data;
+  const description1 = data.description1;
+  const description2 = data.description2;
   return (
     <UiSection className="bg-spec-black-light" id="installment">
       <UiContainer>
-        <UiTitle title="Рассрочка" />
-        <div className="text-spec-text-white flex flex-col gap-5 md:flex-row md:gap-8 lg:gap-14">
-          <div className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-            reprehenderit eveniet alias quasi! Exercitationem, blanditiis?
-            Temporibus a perspiciatis quasi at non voluptas assumenda atque
-            distinctio eum, omnis repellat inventore voluptate voluptatum
-            ducimus beatae, obcaecati consequuntur esse minima necessitatibus
-            cum accusantium libero ipsum numquam? Ut, vero enim minus eaque{" "}
+        <UiTitle title={title} />
+        <div className="flex flex-col gap-5 text-spec-text-white md:flex-row md:gap-8 lg:gap-14">
+          <div className="flex-1">
+            {description1 && (
+              <BlocksRenderer content={description1 as BlocksContent} />
+            )}
           </div>
-          <div className="">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi,
-            eligendi pariatur saepe laboriosam provident consectetur, suscipit
-            cum voluptatem nesciunt consequatur quia et maiores laborum placeat?
-            Alias laborum officiis rerum, temporibus facilis dolore saepe magni
-            excepturi, nam quae nisi distinctio aspernatur odit iste dolores
-            tempore rem at quos voluptate! Quia, perspiciatis.
+          <div className="flex-1">
+            {description2 && (
+              <BlocksRenderer content={description2 as BlocksContent} />
+            )}
           </div>
         </div>
         <div className="mt-10 flex flex-col gap-12 sm:mt-20 lg:px-6">
-          <UiCard
-            title={"Халва - 2 мес "}
-            image={shop}
-            desc={
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, distinctio sint, reprehenderit similique reiciendis atque dicta aliquid dolore harum necessitatibus tenetur repellendus mollitia? Nam veritatis explicabo pariatur atque veniam ad illo repudiandae provident deleniti ex, laudantium quis architecto doloremque inventore velit incidunt, accusantium non ipsam nemo delectus magnam. Animi!"
-            }
-          />
+          {Array.isArray(infoblock) ? (
+            infoblock.map((item, index) => {
+              const { alternativeText, url, height, width } =
+                item.image.data.attributes;
+              return (
+                <UiCard
+                  key={index}
+                  title={item.title}
+                  image={{
+                    alt: alternativeText,
+                    url: url,
+                    height: height,
+                    width: width,
+                  }}
+                  desc={item.description}
+                />
+              );
+            })
+          ) : (
+            <UiCard
+              title={infoblock.title}
+              image={{
+                alt: infoblock.image.data.attributes.alternativeText,
+                url: infoblock.image.data.attributes.url,
+                height: infoblock.image.data.attributes.height,
+                width: infoblock.image.data.attributes.width,
+              }}
+              desc={infoblock.description}
+            />
+          )}
 
-          <UiCard
+          {/* <UiCard
             title={"Халва - 2 мес "}
             image={card1}
             desc={
@@ -50,7 +76,7 @@ export function InstallmentScreen() {
             desc={
               "Мы приглашаем вас узнать больше о нашей компании на этой странице. Здесь вы можете прочитать о нашей истории, узнать о наших ценностях, и о том, как мы стремимся обеспечить нашим клиентам предложений."
             }
-          />
+          /> */}
         </div>
       </UiContainer>
     </UiSection>

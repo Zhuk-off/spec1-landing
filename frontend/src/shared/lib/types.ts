@@ -1,155 +1,188 @@
+
 export interface Welcome {
-  data: Data;
-  meta: Meta;
+    data: Data;
+    meta: Meta;
 }
 
 export interface Data {
-  id: number;
-  attributes: PurpleAttributes;
+    id:         number;
+    attributes: PurpleAttributes;
 }
 
 export interface PurpleAttributes {
-  createdAt: Date;
-  updatedAt: Date;
-  publishedAt: Date;
-  name: string;
-  Menu: Menu;
-  Header: Header;
-  imagemain: Imagemain;
-  contentSections: ContentSection[];
+    createdAt:       Date;
+    updatedAt:       Date;
+    publishedAt:     Date;
+    name:            string;
+    Header:          Header;
+    footer:          Footer;
+    Menu:            Menu;
+    imagemain:       Imagemain;
+    contentSections: ContentSection[];
 }
 
 export interface Header {
-  id: number;
-  name: string;
-  social: Social;
-  phone: Phone;
-  email: Email;
-  logo: Logo;
+    id:     number;
+    name:   string;
+    social: Social;
+    phone:  Phone;
+    email:  Email;
+    logo:   Logo;
 }
 
 export interface Email {
-  id: number;
-  email: string;
+    id:    number;
+    email: string;
 }
 
 export interface Logo {
-  id: number;
-  name: string;
-  alt: string;
-  link: string;
-  image: Image;
+    id:    number;
+    name:  string;
+    alt:   string;
+    link:  string;
+    image: Image;
 }
 
 export interface Image {
-  data: DAT;
+    data: DAT;
 }
 
 export interface DAT {
-  id: number;
-  attributes: DatumAttributes;
+    id:         number;
+    attributes: DatumAttributes;
 }
 
 export interface DatumAttributes {
-  name: string;
-  alternativeText: null | string;
-  caption: null;
-  width: number;
-  height: number;
-  formats: Formats | null;
-  hash: string;
-  ext: EXT;
-  mime: MIME;
-  size: number;
-  url: string;
-  previewUrl: null;
-  provider: Provider;
-  provider_metadata: null;
-  createdAt: Date;
-  updatedAt: Date;
+    name:              string;
+    alternativeText:   null | string;
+    caption:           null;
+    width:             number;
+    height:            number;
+    formats:           Formats | null;
+    hash:              string;
+    ext:               EXT;
+    mime:              MIME;
+    size:              number;
+    url:               string;
+    previewUrl:        null;
+    provider:          Provider;
+    provider_metadata: null;
+    createdAt:         Date;
+    updatedAt:         Date;
 }
 
 export enum EXT {
-  Jpg = ".jpg",
-  SVG = ".svg",
-  Webp = ".webp",
+    EXTJPG = ".JPG",
+    Jpg = ".jpg",
+    PNG = ".png",
+    SVG = ".svg",
+    Webp = ".webp",
 }
 
 export interface Formats {
-  thumbnail: Large;
-  medium: Large;
-  small: Large;
-  large?: Large;
+    thumbnail: Large;
+    medium:    Large;
+    small:     Large;
+    large?:    Large;
 }
 
 export interface Large {
-  name: string;
-  hash: string;
-  ext: EXT;
-  mime: MIME;
-  path: null;
-  width: number;
-  height: number;
-  size: number;
-  url: string;
+    name:   string;
+    hash:   string;
+    ext:    EXT;
+    mime:   MIME;
+    path:   null;
+    width:  number;
+    height: number;
+    size:   number;
+    url:    string;
 }
 
 export enum MIME {
-  ImageJPEG = "image/jpeg",
-  ImageSVGXML = "image/svg+xml",
-  ImageWebp = "image/webp",
+    ImageJPEG = "image/jpeg",
+    ImagePNG = "image/png",
+    ImageSVGXML = "image/svg+xml",
+    ImageWebp = "image/webp",
 }
 
 export enum Provider {
-  Local = "local",
+    Local = "local",
 }
 
 export interface Phone {
-  id: number;
-  number: string;
-  link: string;
+    id:     number;
+    number: string;
+    link:   string;
 }
 
 export interface Social {
-  id: number;
-  viber: string;
-  telegram: string;
+    id:       number;
+    viber:    string;
+    telegram: string;
 }
 
 export interface Menu {
-  id: number;
-  name: string;
-  item: Item[];
+    id:   number;
+    name: string;
+    item: Item[];
 }
 
 export interface Item {
-  id: number;
-  name: string;
-  link: string;
+    id:   number;
+    name: string;
+    link: string;
 }
 
 export interface ContentSection {
-  id: number;
-  __component: string;
-  slider: Slider;
-  about: About[];
+    id:            number;
+    __component:   string;
+    title:         string;
+    slider?:       Slider;
+    infoblock:     InfoblockElement[] | InfoblockElement;
+    description1?: Description[];
+    description2?: Description[];
+    description?:  Description[];
+    greenprice?:   string;
+    yellowprice?:  string;
+    purpleprice?:  string;
 }
 
-export interface About {
-  id: number;
-  title: string;
-  description: string;
-  idname: string;
-  image: Image;
+export interface Description {
+    type:     string;
+    children: Child[];
+}
+
+export interface Child {
+    type: string;
+    text: string;
+}
+
+export interface InfoblockElement {
+    id:          number;
+    title:       string;
+    description: string;
+    idname:      string;
+    image:       Image;
 }
 
 export interface Slider {
-  data: DAT[];
+    data: DAT[];
+}
+
+export interface Footer {
+    id:      number;
+    working: string;
+    address: string;
+    logo:    Logo;
+    phone:   Phone;
+    email:   Email;
+    social:  Social;
 }
 
 export interface Imagemain {
-  id: number;
-  imagemain: Image;
+    id:        number;
+    imagemain: Image;
 }
 
-export interface Meta {}
+export interface Meta {
+}

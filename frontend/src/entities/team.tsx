@@ -1,9 +1,10 @@
 import { getFullUrl } from "@/shared/lib/constants/helpers/helpers";
-import { About } from "@/shared/lib/types";
+import { InfoblockElement } from "@/shared/lib/types";
+
 import { UiTitle } from "@/shared/ui/ui-title";
 import Image from "next/image";
 
-export function Team({ data }: { data: About }) {
+export function Team({ data }: { data: InfoblockElement }) {
   const { title, description, image } = data;
   const { alternativeText, url, height, width } = image.data.attributes;
   return (
@@ -21,7 +22,7 @@ export function Team({ data }: { data: About }) {
           alt={alternativeText ? alternativeText : ""}
           height={height}
           width={width}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover xl:max-h-[500px]"
         />
       </div>
     </div>

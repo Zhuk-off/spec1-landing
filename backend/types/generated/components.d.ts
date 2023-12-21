@@ -105,11 +105,74 @@ export interface SectionsAbout extends Schema.Component {
     description: '';
   };
   attributes: {
-    about: Attribute.Component<'shared.block', true> &
+    infoblock: Attribute.Component<'shared.block', true> &
       Attribute.SetMinMax<{
         max: 2;
       }>;
     slider: Attribute.Media;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface SectionsContacts extends Schema.Component {
+  collectionName: 'components_sections_contacts';
+  info: {
+    displayName: 'Contacts';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    infoblock: Attribute.Component<'shared.block', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
+  };
+}
+
+export interface SectionsInstallment extends Schema.Component {
+  collectionName: 'components_sections_installments';
+  info: {
+    displayName: 'Installment';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description1: Attribute.Blocks & Attribute.Required;
+    description2: Attribute.Blocks & Attribute.Required;
+    infoblock: Attribute.Component<'shared.block', true>;
+  };
+}
+
+export interface SectionsShipping extends Schema.Component {
+  collectionName: 'components_sections_shippings';
+  info: {
+    displayName: 'Shipping';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    infoblock: Attribute.Component<'shared.block'> & Attribute.Required;
+    description: Attribute.Blocks & Attribute.Required;
+    greenprice: Attribute.String & Attribute.Required;
+    yellowprice: Attribute.String & Attribute.Required;
+    purpleprice: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface SectionsShop extends Schema.Component {
+  collectionName: 'components_sections_shops';
+  info: {
+    displayName: 'Shop';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    infoblock: Attribute.Component<'shared.block', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: 3;
+      }>;
   };
 }
 
@@ -125,6 +188,22 @@ export interface SharedBlock extends Schema.Component {
     description: Attribute.RichText;
     image: Attribute.Media & Attribute.Required;
     idname: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface WidgetsFooter extends Schema.Component {
+  collectionName: 'components_widgets_footers';
+  info: {
+    displayName: 'footer';
+    description: '';
+  };
+  attributes: {
+    working: Attribute.String;
+    address: Attribute.String;
+    logo: Attribute.Component<'logo.logo'> & Attribute.Required;
+    phone: Attribute.Component<'contact.phone'> & Attribute.Required;
+    email: Attribute.Component<'contact.email'> & Attribute.Required;
+    social: Attribute.Component<'contact.social'> & Attribute.Required;
   };
 }
 
@@ -155,7 +234,12 @@ declare module '@strapi/types' {
       'menu.menu-item': MenuMenuItem;
       'menu.menu': MenuMenu;
       'sections.about': SectionsAbout;
+      'sections.contacts': SectionsContacts;
+      'sections.installment': SectionsInstallment;
+      'sections.shipping': SectionsShipping;
+      'sections.shop': SectionsShop;
       'shared.block': SharedBlock;
+      'widgets.footer': WidgetsFooter;
       'widgets.header': WidgetsHeader;
     }
   }

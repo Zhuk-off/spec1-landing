@@ -75,9 +75,9 @@ export function HomePageView({ data }: { data: Welcome }) {
 
       {section}
 
-      <StorefrontScreen />
+      {/* <StorefrontScreen /> */}
 
-      <InstallmentScreen />
+      {/* <InstallmentScreen /> */}
 
       <ShippingScreen />
 

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_shops",
+  "info": {
+    "displayName": "Shop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "infoblock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.block",
+      "required": true,
+      "min": 3
+    }
+  }
+}

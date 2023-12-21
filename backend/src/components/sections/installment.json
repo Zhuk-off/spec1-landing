@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_installments",
+  "info": {
+    "displayName": "Installment",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description1": {
+      "type": "blocks",
+      "required": true
+    },
+    "description2": {
+      "type": "blocks",
+      "required": true
+    },
+    "infoblock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.block"
+    }
+  }
+}

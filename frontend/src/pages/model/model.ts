@@ -8,6 +8,7 @@ export async function getPageBySlug(slug: string) {
   const urlParamsObject = {
     populate: {
       Header: { populate: ["social", "phone", "email", "logo", "logo.image"] },
+      footer: { populate: ["logo", "logo.image", "phone", "email", "social"] },
       Menu: { populate: ["item"] },
       imagemain: {
         populate: ["imagemain"],
@@ -15,7 +16,19 @@ export async function getPageBySlug(slug: string) {
       contentSections: {
         on: {
           "sections.about": {
-            populate: ["slider", "about.image"],
+            populate: ["slider", "infoblock.image"],
+          },
+          "sections.shop": {
+            populate: ["infoblock.image"],
+          },
+          "sections.installment": {
+            populate: ["infoblock.image"],
+          },
+          "sections.shipping": {
+            populate: ["infoblock.image"],
+          },
+          "sections.contacts": {
+            populate: ["infoblock.image"],
           },
         },
       },

@@ -1,8 +1,12 @@
 import clsx from "clsx";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { getFullUrl } from "../lib/constants/helpers/helpers";
 
 type IShopCat = {
-  image: string | StaticImageData;
+  image: {
+    url: string;
+    alt: string | null;
+  };
   title: string;
   desc: string;
   position: "left" | "right";
@@ -26,10 +30,10 @@ export const UiShopCat = ({
       )}
     >
       <Image
-        src={image}
+        src={getFullUrl(image.url)}
         width={382}
         height={514}
-        alt="Storefront"
+        alt={image.alt ? image.alt : "Storefront"}
         className={clsx(
           `w-full object-cover sm:h-[514px] sm:w-[382px] sm:flex-[1_2_0%] xl:absolute xl:-top-[80px]`,
           xPosition,
@@ -37,14 +41,14 @@ export const UiShopCat = ({
       />
       <div className="scroll-spec overflow-y-auto sm:h-[280px]  sm:flex-[2_2_0%]">
         <h3
-          className={`mb-5 pr-1 ${
+          className={`mb-5 pr-1 uppercase ${
             position === "left" ? "sm:text-left" : "sm:text-right"
           } font-specTitle text-3xl font-bold tracking-wide text-spec-gold-light`}
         >
           {title}
         </h3>
         <p
-          className={`text-spec-text-white pr-1 text-base ${
+          className={`pr-1 text-base text-spec-text-white ${
             position === "left" ? "sm:text-left" : "sm:text-right"
           }`}
         >

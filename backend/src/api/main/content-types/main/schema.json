@@ -36,8 +36,19 @@
     "contentSections": {
       "type": "dynamiczone",
       "components": [
-        "sections.about"
-      ]
+        "sections.about",
+        "sections.shop",
+        "sections.installment",
+        "sections.shipping",
+        "sections.contacts"
+      ],
+      "required": true
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "widgets.footer",
+      "required": true
     }
   }
 }
