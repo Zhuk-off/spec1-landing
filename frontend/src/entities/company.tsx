@@ -1,8 +1,9 @@
 import { getFullUrl } from "@/shared/lib/constants/helpers/helpers";
 import { InfoblockElement } from "@/shared/lib/types";
 import { UiTitle } from "@/shared/ui/ui-title";
-import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { BlocksContent } from "@strapi/blocks-react-renderer";
 import Image from "next/image";
+import { StyledBlocksRenderer } from "./rich-text";
 
 export function Company({ data }: { data: InfoblockElement }) {
   const { title, description, image } = data;
@@ -13,7 +14,7 @@ export function Company({ data }: { data: InfoblockElement }) {
         <div className="flex-1 shadow-2xl md:px-7 md:py-14">
           <UiTitle title={title} />
           <div className="text-spec-text-white">
-            <BlocksRenderer content={description as BlocksContent} />
+            <StyledBlocksRenderer content={description as BlocksContent} />
           </div>
         </div>
         <div className="flex-1">

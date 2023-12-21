@@ -1,8 +1,9 @@
+import { StyledBlocksRenderer } from "@/entities/rich-text";
 import { ContentSection } from "@/shared/lib/types";
 import UiContainer from "@/shared/ui/layouts/ui-container";
 import UiSection from "@/shared/ui/layouts/ui-section";
 import { UiTitle } from "@/shared/ui/ui-title";
-import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { BlocksContent } from "@strapi/blocks-react-renderer";
 
 export function ContactsScreen({ data }: { data: ContentSection }) {
   const { title, infoblock } = data;
@@ -16,7 +17,7 @@ export function ContactsScreen({ data }: { data: ContentSection }) {
               {Array.isArray(infoblock) &&
                 infoblock.map((item, index) => {
                   return (
-                    <BlocksRenderer
+                    <StyledBlocksRenderer
                       key={index}
                       content={item.description as BlocksContent}
                     />

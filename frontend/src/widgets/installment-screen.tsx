@@ -3,10 +3,8 @@ import UiSection from "@/shared/ui/layouts/ui-section";
 import { UiCard } from "@/shared/ui/ui-card";
 import { UiTitle } from "@/shared/ui/ui-title";
 import { ContentSection } from "@/shared/lib/types";
-import {
-  BlocksRenderer,
-  type BlocksContent,
-} from "@strapi/blocks-react-renderer";
+import { BlocksContent } from "@strapi/blocks-react-renderer";
+import { StyledBlocksRenderer } from "@/entities/rich-text";
 
 export function InstallmentScreen({ data }: { data: ContentSection }) {
   console.log("data---", data);
@@ -20,12 +18,12 @@ export function InstallmentScreen({ data }: { data: ContentSection }) {
         <div className="flex flex-col gap-5 text-spec-text-white md:flex-row md:gap-8 lg:gap-14">
           <div className="flex-1">
             {description1 && (
-              <BlocksRenderer content={description1 as BlocksContent} />
+              <StyledBlocksRenderer content={description1 as BlocksContent} />
             )}
           </div>
           <div className="flex-1">
             {description2 && (
-              <BlocksRenderer content={description2 as BlocksContent} />
+              <StyledBlocksRenderer content={description2 as BlocksContent} />
             )}
           </div>
         </div>

@@ -3,6 +3,7 @@ import { InfoblockElement } from "@/shared/lib/types";
 import { UiTitle } from "@/shared/ui/ui-title";
 import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Image from "next/image";
+import { StyledBlocksRenderer } from "./rich-text";
 
 export function Team({ data }: { data: InfoblockElement }) {
   const { title, description, image } = data;
@@ -12,7 +13,7 @@ export function Team({ data }: { data: InfoblockElement }) {
       <div className="relative z-10 flex w-full flex-col md:w-1/2 ">
         <UiTitle title={title} />
         <div className="text-spec-text-white">
-          <BlocksRenderer content={description as BlocksContent} />
+          <StyledBlocksRenderer content={description as BlocksContent} />
         </div>
       </div>
       <div className="absolute left-0 top-1/2 z-0 max-h-full min-h-[200px] w-full -translate-y-1/2 overflow-hidden md:left-1/3 md:w-2/3">

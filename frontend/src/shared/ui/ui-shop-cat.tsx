@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import Image from "next/image";
-import { getFullUrl } from "../lib/constants/helpers/helpers";
 import { Description } from "../lib/types";
-import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { BlocksContent } from "@strapi/blocks-react-renderer";
+import { StyledBlocksRenderer } from "@/entities/rich-text";
 
 type IShopCat = {
   image: {
@@ -54,7 +54,7 @@ export const UiShopCat = ({
             position === "left" ? "sm:text-left" : "sm:text-right"
           }`}
         >
-          <BlocksRenderer content={description as BlocksContent} />
+          <StyledBlocksRenderer content={description as BlocksContent} />
         </div>
       </div>
     </div>

@@ -3,8 +3,9 @@ import UiSection from "@/shared/ui/layouts/ui-section";
 import { UiTitle } from "@/shared/ui/ui-title";
 import Image from "next/image";
 import { ContentSection } from "@/shared/lib/types";
-import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { BlocksContent } from "@strapi/blocks-react-renderer";
 import { getFullUrl } from "@/shared/lib/constants/helpers/helpers";
+import { StyledBlocksRenderer } from "@/entities/rich-text";
 
 export function ShippingScreen({ data }: { data: ContentSection }) {
   const {
@@ -24,7 +25,7 @@ export function ShippingScreen({ data }: { data: ContentSection }) {
             <UiTitle title={title} className="text-white" />
             <div className="text-spec-text-white lg:max-h-12 lg:pl-28">
               {!Array.isArray(infoblock) && (
-                <BlocksRenderer
+                <StyledBlocksRenderer
                   content={infoblock.description as BlocksContent}
                 />
               )}
@@ -61,7 +62,7 @@ export function ShippingScreen({ data }: { data: ContentSection }) {
           <div className="pt-8 text-spec-text-white sm:px-5 md:pt-10 lg:pr-16 lg:pt-16">
             <div className="max-w-2xl">
               {description && (
-                <BlocksRenderer content={description as BlocksContent} />
+                <StyledBlocksRenderer content={description as BlocksContent} />
               )}
             </div>
             <div className="flex flex-col gap-5 py-10 text-spec-text-white sm:flex-row lg:justify-between xl:flex-col 2xl:flex-row">
