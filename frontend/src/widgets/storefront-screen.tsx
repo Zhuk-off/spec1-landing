@@ -22,6 +22,8 @@ export function StorefrontScreen({ data }: { data: ContentSection }) {
                     alt: item.image.data.attributes.alternativeText
                       ? item.image.data.attributes.alternativeText
                       : "Storefront",
+                    width: item.image.data.attributes.width,
+                    height: item.image.data.attributes.height,
                   }}
                   title={item.title}
                   description={item.description}
@@ -35,6 +37,8 @@ export function StorefrontScreen({ data }: { data: ContentSection }) {
                   alt: infoblock.image.data.attributes.alternativeText
                     ? infoblock.image.data.attributes.alternativeText
                     : "Storefront",
+                  width: infoblock.image.data.attributes.width,
+                  height: infoblock.image.data.attributes.height,
                 }}
                 title={infoblock.title}
                 description={infoblock.description}

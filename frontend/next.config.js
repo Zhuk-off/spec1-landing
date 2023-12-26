@@ -8,6 +8,12 @@ const nextConfig = {
         port: "1338",
         pathname: "/uploads/**",
       },
+      {
+        protocol: "http",
+        hostname: "spec1.zhukoff.by",
+        port: "",
+        pathname: "/uploads/**",
+      },
     ],
   },
 };

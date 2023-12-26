@@ -8,6 +8,8 @@ type IShopCat = {
   image: {
     url: string;
     alt: string;
+    width: number;
+    height: number;
   };
   title: string;
   description: Description[];
@@ -33,8 +35,8 @@ export const UiShopCat = ({
     >
       <Image
         src={image.url}
-        width={382}
-        height={514}
+        width={image.width}
+        height={image.height}
         alt={image.alt}
         className={clsx(
           `w-full object-cover sm:h-[514px] sm:w-[382px] sm:flex-[1_2_0%] xl:absolute xl:-top-[80px]`,
