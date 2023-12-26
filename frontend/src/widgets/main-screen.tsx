@@ -34,6 +34,8 @@ export function MainScreen({
   const logoUrl =
     process.env.NEXT_PUBLIC_STRAPI_API_URL +
     header.logo.image.data.attributes.url;
+  console.log("logo Url", logoUrl);
+  console.log("mainImage Url", mainImage.url);
 
   return (
     <>
@@ -95,8 +97,8 @@ export function MainScreen({
           <Image
             alt={mainImage?.alt ? mainImage.alt : ""}
             src={mainImage.url}
-            width={mainImage.width}
-            height={mainImage.height}
+            width={1000}
+            height={1000}
             priority
             className="animate-scale-in-top"
           />

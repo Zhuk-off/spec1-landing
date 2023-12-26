@@ -25,6 +25,7 @@ export default function HomePageView({ data }: { data: Welcome }) {
   const section = dataRes.contentSections.map((section: any, index: number) =>
     sectionRenderer(section, index),
   );
+  console.log("mainImage Url", mainImage.url);
 
   return (
     <main
