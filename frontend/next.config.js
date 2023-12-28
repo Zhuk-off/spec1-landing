@@ -7,9 +7,11 @@ const nextConfig = {
     ],
     domains: [
       "localhost", 
+      "**.localhost", 
       "zhukoff.by",
       "spec.zhukoff.by", 
       "spec1.zhukoff.by", 
+      "www.spec1.zhukoff.by", 
     ]
     // formats: ['image/avif', 'image/webp'],
     // remotePatterns: [
