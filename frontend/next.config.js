@@ -47,6 +47,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "**.zhukoff.by",
       },
+      {
+        protocol: "https",
+        hostname: "mc.yandex.com",
+      },
       // {
       //   protocol: "http",
       //   hostname: "**.zhukoff.by",

@@ -21,7 +21,7 @@ export function ShippingScreen({ data }: { data: ContentSection }) {
     <UiSection className="bg-spec-bg-black" id={data.linkForMenu}>
       <UiContainer>
         <div className="relative flex lg:static lg:flex-row-reverse">
-          <div className="relative z-10 max-w-2xl overflow-y-auto sm:px-5 lg:w-[500px] lg:px-0 lg:pt-20">
+          <div className="lg:shrink-0 relative z-10 max-w-2xl overflow-y-auto sm:px-5 lg:w-[500px] lg:px-0 lg:pt-20">
             <UiTitle title={title} className="text-white" />
             <div className="text-spec-text-white lg:max-h-12 lg:pl-28">
               {!Array.isArray(infoblock) && (
