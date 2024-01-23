@@ -16,6 +16,7 @@ export function ContactsScreen({ data }: { data: ContentSection }) {
             <div className="text-spec-text-white">
               {Array.isArray(infoblock) &&
                 infoblock.map((item, index) => {
+                  console.log('item.description', item.description)
                   return (
                     <StyledBlocksRenderer
                       key={index}

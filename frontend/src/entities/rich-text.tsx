@@ -1,11 +1,24 @@
+"use client";
 import { BlocksContent, BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export function StyledBlocksRenderer({ content }: { content: BlocksContent }) {
-  return (
-    <BlocksRenderer
-      content={content}
+type BlocksRendererProps = Parameters<typeof BlocksRenderer>[0];
+
+// export default function RichText(props: BlocksRendererProps) {
+//   return <BlocksRenderer content={props.content} blocks={props.blocks} />;
+// }
+
+export function StyledBlocksRenderer(content: BlocksRendererProps) {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  return isClient ? (
+    <BlocksRenderer 
+      content={content.content}
       blocks={{
         list: ({ children, format }) => {
           switch (format) {
@@ -102,5 +115,7 @@ export function StyledBlocksRenderer({ content }: { content: BlocksContent }) {
         ),
       }}
     />
+  ) : (
+    ""
   );
 }

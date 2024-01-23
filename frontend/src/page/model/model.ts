@@ -90,6 +90,13 @@ export async function generateMeta(): Promise<Metadata> {
       alternates: {
         canonical: page.data.attributes.seo.canonical,
       },
+      // formatDetection will remove hydrotation errors on iOS, because iOS tries to convert the text into exiles, which leads to a hydrotation error
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+        date: false,
+      },
     } as Metadata;
   return {
     title: "Спец 1",
