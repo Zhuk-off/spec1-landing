@@ -36,7 +36,7 @@ export default function Home({ res }: { res: Welcome }) {
   const section = dataRes.contentSections.map((section: any, index: number) =>
     sectionRenderer(section, index)
   );
-  console.log('mainImage Url', mainImage.url);
+  // console.log('mainImage Url', mainImage.url);
 
   return (
     <main

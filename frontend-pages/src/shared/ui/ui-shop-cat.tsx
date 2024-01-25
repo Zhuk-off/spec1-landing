@@ -24,7 +24,7 @@ export const UiShopCat = ({
   position = "left",
   className,
 }: IShopCat) => {
-  console.log(image.url)
+  // console.log(image.url)
   const xPosition =
     position === "left" ? "xl:-left-[415px]" : "xl:-right-[415px]";
   return (

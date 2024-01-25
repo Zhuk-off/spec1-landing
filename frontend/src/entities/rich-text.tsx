@@ -12,12 +12,12 @@ type BlocksRendererProps = Parameters<typeof BlocksRenderer>[0];
 
 export function StyledBlocksRenderer(content: BlocksRendererProps) {
   const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
     setIsClient(true);
   }, []);
-
   return isClient ? (
-    <BlocksRenderer 
+    <BlocksRenderer
       content={content.content}
       blocks={{
         list: ({ children, format }) => {
@@ -116,6 +116,6 @@ export function StyledBlocksRenderer(content: BlocksRendererProps) {
       }}
     />
   ) : (
-    ""
+    <div className=""></div>
   );
 }

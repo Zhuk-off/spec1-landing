@@ -11,7 +11,7 @@ export const UiMail = ({ mail, className }: IMail) => {
     <a href={`mailto:${mail}`} className={clsx(className, "")}>
       <div className="flex items-center gap-2 text-spec-gold-light transition-colors md:hover:text-spec-gold-light-hover">
         <SvgMail />
-        <div className="font-specTitle text-lg font-bold tracking-wider ">
+        <div className="font-specTitle text-lg tracking-wider ">
           {mail}
         </div>
       </div>

@@ -17,13 +17,14 @@ export function Company({ data }: { data: InfoblockElement }) {
             <StyledBlocksRenderer content={description as BlocksContent} />
           </div>
         </div>
-        <div className="flex-1">
+        <div className="relative h-[300px] w-full md:flex-1">
           <Image
             src={getFullUrl(url)}
             alt={alternativeText ? alternativeText : ""}
-            height={height}
-            width={width}
-            className="w-full object-cover"
+            // height={height}
+            // width={width}
+            fill
+            className="w-full object-contain"
           />
         </div>
       </div>

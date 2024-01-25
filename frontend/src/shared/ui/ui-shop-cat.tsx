@@ -33,21 +33,30 @@ export const UiShopCat = ({
         className,
       )}
     >
-      <Image
-        src={image.url}
-        width={image.width}
-        height={image.height}
-        alt={image.alt}
+      <div
         className={clsx(
-          `w-full object-cover sm:h-[514px] sm:w-[382px] sm:flex-[1_2_0%] xl:absolute xl:-top-[80px]`,
+          `relative w-full h-[347px] overflow-hidden sm:h-[514px] sm:w-[382px] sm:flex-[1_2_0%] xl:absolute xl:-top-[80px]`,
           xPosition,
         )}
-      />
+      >
+        <Image
+          src={image.url}
+          // width={image.width}
+          // height={image.height}
+          fill
+          alt={image.alt}
+          // className={clsx(
+          //   `w-full object-cover sm:h-[514px] sm:w-[382px] sm:flex-[1_2_0%] xl:absolute xl:-top-[80px]`,
+          //   xPosition,
+          // )}
+          className="object-cover"
+        />
+      </div>
       <div className="scroll-spec overflow-y-auto sm:h-[280px]  sm:flex-[2_2_0%]">
         <h3
           className={`mb-5 pr-1 uppercase ${
             position === "left" ? "sm:text-left" : "sm:text-right"
-          } font-specTitle text-3xl font-bold tracking-wide text-spec-gold-light`}
+          } font-specTitle text-3xl tracking-wide text-spec-gold-light`}
         >
           {title}
         </h3>

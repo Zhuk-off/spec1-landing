@@ -30,25 +30,25 @@ export function StyledBlocksRenderer({ content }: { content: BlocksContent }) {
           switch (level) {
             case 1:
               return (
-                <h1 className="h1 mb-5 pr-1 font-specTitle text-3xl font-bold uppercase tracking-wide text-spec-gold-light sm:text-left">
+                <h1 className="h1 mb-5 pr-1 font-specTitle text-3xl uppercase tracking-wide text-spec-gold-light sm:text-left">
                   {children}
                 </h1>
               );
             case 2:
               return (
-                <h2 className="h2 mb-5 pr-1 font-specTitle text-3xl font-bold uppercase tracking-wide text-spec-gold-light sm:text-left">
+                <h2 className="h2 mb-5 pr-1 font-specTitle text-3xl uppercase tracking-wide text-spec-gold-light sm:text-left">
                   {children}
                 </h2>
               );
             case 3:
               return (
-                <h3 className="h3 mb-5 pr-1 font-specTitle text-3xl font-bold uppercase tracking-wide text-spec-gold-light sm:text-left">
+                <h3 className="h3 mb-5 pr-1 font-specTitle text-3xl uppercase tracking-wide text-spec-gold-light sm:text-left">
                   {children}
                 </h3>
               );
             case 4:
               return (
-                <h4 className="h4 mb-5 pr-1 font-specTitle text-3xl font-bold uppercase tracking-wide text-spec-gold-light sm:text-left">
+                <h4 className="h4 mb-5 pr-1 font-specTitle text-3xl uppercase tracking-wide text-spec-gold-light sm:text-left">
                   {children}
                 </h4>
               );

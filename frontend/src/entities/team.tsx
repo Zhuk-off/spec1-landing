@@ -16,16 +16,17 @@ export function Team({ data }: { data: InfoblockElement }) {
           <StyledBlocksRenderer content={description as BlocksContent} />
         </div>
       </div>
-      <div className="absolute left-0 top-1/2 z-0 max-h-full min-h-[200px] w-full -translate-y-1/2 overflow-hidden md:left-1/3 md:w-2/3">
+      <div className="absolute left-0 top-1/2 z-0 h-full max-h-full min-h-[200px] w-full -translate-y-1/2 overflow-hidden md:left-1/3 md:w-2/3">
         <div className="absolute inset-0 z-0 bg-spec-black-light/50 backdrop-blur-sm md:bg-spec-black-light/0 md:backdrop-blur-0"></div>
         <div className="absolute inset-0 w-1/2 bg-gradient-to-l from-transparent to-spec-black-light"></div>
         <div className="absolute bottom-0 left-1/2 right-0 top-0 w-1/2 bg-gradient-to-r from-transparent to-spec-black-light"></div>
         <Image
           src={getFullUrl(url)}
           alt={alternativeText ? alternativeText : ""}
-          height={height}
-          width={width}
-          className="h-full w-full object-cover xl:max-h-[500px]"
+          // height={height}
+          // width={width}
+          fill
+          className="-z-10 object-cover xl:max-h-[500px]"
         />
       </div>
     </div>

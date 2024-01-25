@@ -23,16 +23,20 @@ export const UiCard = ({ title, description, image, className }: ICard) => {
       className={clsx("flex items-center md:gap-x-8 lg:gap-x-14", className)}
     >
       <div className="shrink-0 xl:flex-1">
-        <Image
-          src={getFullUrl(image.url)}
-          alt={image.alt ? image.alt : ""}
-          width={image.width}
-          height={image.height}
-          className="hidden h-[160px] w-[253px] rounded-3xl object-cover md:block xl:h-[320px] xl:w-[506px]"
-        />
+        <div className="relative hidden h-[160px] w-[253px] object-cover md:block xl:h-[320px] xl:w-[506px]">
+          <Image
+            src={getFullUrl(image.url)}
+            alt={image.alt ? image.alt : ""}
+            // width={image.width}
+            // height={image.height}
+            fill
+            className="object-cover md:rounded-2xl xl:rounded-3xl"
+            // className="hidden h-[160px] w-[253px] rounded-3xl object-cover md:block xl:h-[320px] xl:w-[506px]"
+          />
+        </div>
       </div>
       <div className="xl:flex-1">
-        <h3 className="mb-3 max-w-2xl font-specTitle text-2xl font-bold uppercase text-spec-gold-light md:text-2xl lg:text-4xl">
+        <h3 className="mb-3 max-w-2xl font-specTitle text-2xl uppercase text-spec-gold-light md:text-2xl lg:text-4xl">
           {title}
         </h3>
         <div className="max-w-2xl text-spec-text-white">

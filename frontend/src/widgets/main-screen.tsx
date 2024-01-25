@@ -10,6 +10,7 @@ import { UiPhone } from "@/shared/ui/ui-phone";
 import { UiSocialIcon } from "@/shared/ui/ui-social-icon";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
+import profilePic from "/public/bg-promo.webp";
 
 export function MainScreen({
   header,
@@ -32,8 +33,8 @@ export function MainScreen({
   const logoUrl =
     process.env.NEXT_PUBLIC_STRAPI_API_URL +
     header.logo.image.data.attributes.url;
-  console.log("logo Url", logoUrl);
-  console.log("mainImage Url", mainImage.url);
+  // console.log("logo Url", logoUrl);
+  // console.log("mainImage Url", mainImage.url);
 
   return (
     <>
@@ -91,20 +92,30 @@ export function MainScreen({
 
       {/* Central image and filters start  */}
       <div className="mainheight flex grow flex-col justify-center">
-        <div className="relative flex grow flex-col justify-center bg-black pr-5 pt-16 sm:pt-10">
-          <Image
-            alt={mainImage?.alt ? mainImage.alt : ""}
-            src={mainImage.url}
-            width={mainImage.width}
-            height={mainImage.height}
-            priority
-            className="animate-scale-in-top"
-          />
-          <div className="relative -mt-10 h-10 bg-gradient-to-t from-black to-transparent md:h-10"></div>
-          <div className="relative -mt-10 h-10 bg-gradient-to-t from-black to-transparent md:-mt-20 md:h-20"></div>
+        {/* <div className="relative flex grow flex-col justify-center bg-black pr-5 pt-16 sm:pt-10"> */}
+        <div className="h-full w-full bg-black grow relative">
+          
+            <Image
+              alt={mainImage?.alt ? mainImage.alt : ""}
+              src={mainImage.url}
+              // src={profilePic}
+              // width={mainImage.width}
+              // height={mainImage.height}
+              // priority
+              // fill
+              // sizes="100vh"
+              className="animate-scale-in-top object-contain"
+              fill
+              priority
+            />
+        
+
+          {/* <div className="relative -mt-10 h-10 bg-gradient-to-t from-black to-transparent md:h-10"></div>
+            <div className="relative -mt-10 h-10 bg-gradient-to-t from-black to-transparent md:-mt-20 md:h-20"></div> */}
         </div>
-        <div className="h-32 bg-black md:h-20"></div>
+        <div className="h-20 bg-black md:h-20"></div>
       </div>
+      {/* </div> */}
       {/* <div className="from-spec-black-light h-8 bg-gradient-to-t to-black md:h-20"></div> */}
       {/* Central image and filters end  */}
     </>
